@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :country
-      t.references :homeOwner, index: true, foreign_key: true
+      #t.references :homeOwner, index: true, foreign_key: true
 
       t.timestamps null: false
     end
