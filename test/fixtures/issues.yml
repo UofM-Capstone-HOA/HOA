@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issueId: 1
+  date: 2016-02-15 19:12:40
+  addressId_id: 
+  homeownerId_id: 
+  letterId_id: 
+  lien: false
+  resolved: false
+  userId_id: 
+  note: MyText
+  picture: MyString
+  issueCategoryId_id: 
+
+two:
+  issueId: 1
+  date: 2016-02-15 19:12:40
+  addressId_id: 
+  homeownerId_id: 
+  letterId_id: 
+  lien: false
+  resolved: false
+  userId_id: 
+  note: MyText
+  picture: MyString
+  issueCategoryId_id: 
