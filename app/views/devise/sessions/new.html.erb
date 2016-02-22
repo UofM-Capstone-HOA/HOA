@@ -1,26 +1,70 @@
-<h2>Log in</h2>
+<!-- Login Section -->
+<section id="login" class="parallax-container scrollspy">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l8 offset-l2 ">
+       <div class="card">
+         <div class="card-content">
+          <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %>
+              </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+              <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+              <% if devise_mapping.rememberable? -%>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end -%>
+
+              <div class="actions">
+                <%= f.submit "Log in" %>
+              </div>
+              <%= render "devise/shared/links" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+  <div class="parallax"><img src= "/assets/52DNU547OZ.jpg" class="img-parallax"></i></div>
+</section>
 
-<%= render "devise/shared/links" %>
+<!-- About Section -->
+<div class="divider"></div>
+<section id="about" class="container scrollspy">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l8 offset-l2 ">
+        <h2>About</h2>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at enim magna. Aliquam et suscipit nunc, nec consectetur arcu. Ut congue elementum convallis. Nam purus lorem, scelerisque volutpat sodales eu, lobortis nec mi. Pellentesque nec mollis tellus. Nulla egestas, ipsum ut viverra consectetur, tellus dui consequat dolor, vitae tristique elit eros eu diam. Pellentesque pellentesque dui ac sapien imperdiet gravida quis a neque. Cras nisi eros, molestie non nisl in, mollis pretium risus. Quisque viverra justo at magna dignissim condimentum. Cras convallis eu ipsum vel rutrum. Nulla facilisis pellentesque magna, vulputate euismod urna faucibus a. Integer mollis, urna sit amet aliquam varius, odio tortor rhoncus tellus, sed dapibus tellus nibh at lacus. Curabitur vel magna at purus posuere mattis. Vivamus pellentesque tellus vitae dui posuere, quis sollicitudin ante placerat.
+
+        Integer eget rutrum quam, sit amet hendrerit diam. Nulla ultrices faucibus est id bibendum. Donec rhoncus, libero eget tempor dictum, leo nunc pellentesque eros, ac maximus nunc arcu non mi. Nunc mattis blandit est mattis malesuada. Nullam pellentesque magna a viverra hendrerit. Pellentesque vitae diam convallis, feugiat sem in, fringilla diam. Curabitur convallis purus a tortor varius vulputate. Sed cursus mauris eget urna placerat, ut maximus arcu vulputate. Sed ultrices velit eget justo volutpat, non consectetur ipsum tristique.
+        </p> 
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<div class="divider"></div>
+<section id="contact" class="parallax-container scrollspy">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l8 offset-l2 ">
+        <h2>Contact</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
