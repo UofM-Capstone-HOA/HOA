@@ -47,4 +47,8 @@ group :development do
   gem 'spring'
 end
 
+# Devise gem
 gem 'devise'
+
+# Material design gem
+gem 'materialize-sass'

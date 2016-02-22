@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+/* Not sure if this is needed yet. */
+/*@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;*/
+
+@import 'materialize';
+
+/* Destop only version */
+@media #{$large-and-up} {
+ 	main {
+		padding-left: 240px;
+	}
+}
+
+/* Tablet and Mobile version */
+@media #{$medium-and-down} {
+
+}

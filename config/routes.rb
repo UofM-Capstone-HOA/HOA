@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  devise_scope :user do
+    #authenticated is currently set to pantry to be changed later
+    authenticated :user do
+      root 'static_pages#home', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
+   get 'home', to: 'static_pages#home', as: 'home'
+
 
 
  #root to: 'application#index'
