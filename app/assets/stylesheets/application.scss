@@ -25,9 +25,18 @@ $primary-color: color("blue", "lighten-2") !default;*/
  	main {
 		padding-left: 240px;
 	}
+	.parallax-container {
+      height: 700px;
+    }
+
 }
 
 /* Tablet and Mobile version */
 @media #{$medium-and-down} {
 
+}
+
+.img-parallax{
+	max-height: 1000px;
+	width: auto;
 }

@@ -12,16 +12,17 @@
 	<header>
 		<!-- Side Navbar for user not signed in -->
       	<% if not user_signed_in? %>
-      		<ul class="side-nav fixed hide-on-med-and-down">
-				<li><a href="#!" class="brand-logo"><i>Logo</i></a></li>
-	    		<li><a href="#!">Log in</a></li>
-	    		<li><a href="#!">About</a></li>
-	    		<li><a href="#!">Contact</a></li>
+      		<ul class="side-nav fixed hide-on-med-and-down section table-of-contents">
+				<li><a href="#page-top" class="brand-logo"><i>Logo</i></a></li>
+	    		<li><a class="waves-effect waves-purple" href="#login">Log in</a></li>
+	    		<li><a class="waves-effect waves-purple" href="#about">About</a></li>
+	    		<li><a class="waves-effect waves-purple" href="#contact">Contact</a></li>
 	  		</ul>
-	  		<ul id="slide-out" class="side-nav">
-	   			<li><a href="#!">Log on</a></li>
-	    		<li><a href="#!">About</a></li>
-	    		<li><a href="#!">Contact</a></li>
+	  		<ul id="slide-out" class="side-nav section table-of-contents">
+	  			<li><a href="#page-top" class="brand-logo"><i>Logo</i></a></li>
+	   			<li><a class="waves-effect waves-purple" href="#login">Log on</a></li>
+	    		<li><a class="waves-effect waves-purple" href="#about">About</a></li>
+	    		<li><a class="waves-effect waves-purple" href="#contact">Contact</a></li>
 	 		</ul>
       	<% end %>
 
@@ -29,14 +30,15 @@
       	<% if user_signed_in? %>
 			<ul class="side-nav fixed hide-on-med-and-down">
 				<li><a href="#!" class="brand-logo"><i>Logo</i></a></li>
-	    		<li><a href="#!">First Sidebar Link</a></li>
-	    		<li><a href="#!">Second Sidebar Link</a></li>
-	    		<li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete%></li>
+	    		<li><a class="waves-effect waves-purple" href="#!">First Sidebar Link</a></li>
+	    		<li><a class="waves-effect waves-purple" href="#!">Second Sidebar Link</a></li>
+	    		<li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete, class: "waves-effect waves-purple"%></li>
 	  		</ul>
 	  		<ul id="slide-out" class="side-nav">
-	   			<li><a href="#!">First Sidebar Link</a></li>
-	    		<li><a href="#!">Second Sidebar Link</a></li>
-	    		<li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete%></li>
+	   			<li><a href="#!" class="brand-logo"><i>Logo</i></a></li>
+	   			<li><a class="waves-effect waves-purple" href="#!">First Sidebar Link</a></li>
+	    		<li><a class="waves-effect waves-purple" href="#!">Second Sidebar Link</a></li>
+	    		<li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete, class: "waves-effect waves-purple"%></li>
 	 		</ul>
  		<% end %>
 
@@ -49,7 +51,9 @@
    
     <!-- Content -->
     <main>
-    	<div class="container">
+
+    	<!-- Flash notification and page top -->
+    	<section class="container" id="page-top">
       		<div class="row">
 	      		<div class="col s12 m9 l9"> 
 	   				<% if flash[:notice] %>
@@ -62,15 +66,13 @@
 	       
 	       		</div>
 	       	</div>
-				 	
-  				<%= yield %>
-  			</div>
-     		
+	    </section>
+			
+		<!-- Individual Page Templates Area -->
+  		<%= yield %>
 
-    	</div>
+     	
     </main>
-
- 
 
 </body>
 </html>

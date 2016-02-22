@@ -17,9 +17,18 @@
 //= require_tree .
 
 
-// Initialize collapse button
+// Initialize jQuery
 (function($){
 	$(function(){
+		//Navbar collapse load
 		$(".button-collapse").sideNav();
+
+		//Parallax scrolling load
+		$('.parallax').parallax();
+
+		// Scrollspy scrolling tracking
+		$('.scrollspy').scrollSpy();
 	}); // end of document ready
 })(jQuery); 
+
+
