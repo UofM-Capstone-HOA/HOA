@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  letterId: 
-  issueId_id: 
+  id: 1
+  issue_id: 
   letterNum: 1
   date: 2016-02-15 19:29:32
 
 two:
-  letterId: 
-  issueId_id: 
+  id: 2
+  issue_id: 
   letterNum: 1
   date: 2016-02-15 19:29:32

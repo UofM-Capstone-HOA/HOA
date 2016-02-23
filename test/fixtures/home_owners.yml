@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  homeOwnerId: 
-  firstName: MyString
-  lastName: MyString
-  email: MyString
-  phone: MyString
+  id: 1
+  firstName: "Josh"
+  lastName: "Restuccio"
+  email: "test@gmail.com"
+  phone: "901-555-5555"
 
 two:
-  homeOwnerId: 
-  firstName: MyString
-  lastName: MyString
-  email: MyString
-  phone: MyString
+  id: 2
+  firstName: "Kevin"
+  lastName: "Townsend"
+  email: "ktown@gmail.com"
+  phone: "901-555-5555"

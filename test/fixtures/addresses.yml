@@ -1,19 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  addressId: 
-  name: MyString
-  street: MyString
-  city: MyString
-  state: MyString
-  country: MyString
-  homeOwnerId_id: 
+a1:
+  id: 1 
+  number: 1588
+  street: "Dorset Drive"
+  city: "Memphis"
+  state: "TN"
+  country: "USA"
+  homeOwner_id: 
 
-two:
-  addressId: 
-  name: MyString
-  street: MyString
-  city: MyString
-  state: MyString
-  country: MyString
-  homeOwnerId_id: 
+a2:
+  id: 2
+  number: 724
+  street: "Deventer Cove"
+  city: "Memphis"
+  state: "TN"
+  country: "USA"
+  homeOwner_id: 
+

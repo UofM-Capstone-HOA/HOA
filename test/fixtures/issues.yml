@@ -1,27 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  issueId: 1
+  id: 1
   date: 2016-02-15 19:12:40
-  addressId_id: 
-  homeownerId_id: 
-  letterId_id: 
+  address_id: 1
+  homeOwner_id: 
+  letter_id: 
   lien: false
   resolved: false
-  userId_id: 
+  user_id: 1
   note: MyText
   picture: MyString
-  issueCategoryId_id: 
+  issueCategory_id: 1
 
 two:
-  issueId: 1
+  id: 2
   date: 2016-02-15 19:12:40
-  addressId_id: 
-  homeownerId_id: 
-  letterId_id: 
+  address_id: 2
+  homeOwner_id: 
+  letter_id: 
   lien: false
   resolved: false
-  userId_id: 
+  user_id: 2
   note: MyText
   picture: MyString
-  issueCategoryId_id: 
+  issueCategory_id: 1

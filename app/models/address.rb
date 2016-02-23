@@ -6,7 +6,7 @@ class Address < ActiveRecord::Base
     validates :street, length: { in: 1..50}
     validates :city, length: { in: 1..30}
     validates :state, length: { in: 1..2} #only accept 2 char state codes
-    validates :country, length: { in 1..20}
+    validates :country, length: { in: 1..20}
 
 
 end

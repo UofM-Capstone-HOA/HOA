@@ -5,6 +5,6 @@ class HomeOwner < ActiveRecord::Base
     validates :firstname,:lastname, length:  { in: 1..20 }
 
     validates :phone, format: { with: /\A[\d]{3}-[\d]{3}-[\d]{4}\Z/ }, allow_blank: true
-    validates :email, format: {/.+@.+\..+/i}, allow_blank: true
+    validates :email, format: { with: /.+@.+/}, allow_blank: true
 
 end
