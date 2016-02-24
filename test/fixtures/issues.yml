@@ -9,8 +9,8 @@ one:
   lien: false
   resolved: false
   user_id: 1
-  note: MyText
-  picture: MyString
+  note: "test"
+  picture: "picture"
   issueCategory_id: 1
 
 two:
@@ -21,7 +21,8 @@ two:
   letter_id: 
   lien: false
   resolved: false
-  user_id: 2
-  note: MyText
-  picture: MyString
+  user_id: 1
+  note: "test"
+  picture: "picture"
   issueCategory_id: 1
+
