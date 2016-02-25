@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+
    get 'home', to: 'static_pages#home', as: 'home'
 
    resources :home_owners
