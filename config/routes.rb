@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
    get 'home', to: 'static_pages#home', as: 'home'
 
+   resources :home_owners
+   resources :addresses
+   resources :issue_categories
+
 
 
  #root to: 'application#index'
