@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   # GET /addresses
@@ -59,6 +60,11 @@ class AddressesController < ApplicationController
       format.html { redirect_to addresses_url, notice: 'Address was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # Display the complete address
+  def full_address
+    [:name, :street].join(' ')
   end
 
   private

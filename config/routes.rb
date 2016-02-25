@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   # issue routes
   resources :issues
 
-   resources :home_owners
-   resources :addresses
-   resources :issue_categories
+  resources :home_owners
+  resources :addresses
+  resources :issue_categories
 
 
 

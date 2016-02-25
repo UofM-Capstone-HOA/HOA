@@ -1,4 +1,5 @@
 class IssueCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_issue_category, only: [:show, :edit, :update, :destroy]
 
   # GET /issue_categories

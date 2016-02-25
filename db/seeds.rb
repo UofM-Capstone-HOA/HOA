@@ -6,10 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-HomeOwner.create(
+ josh = HomeOwner.create!(
     firstName: 'Josh',
     lastName: 'Restuccio',
     email: 'jstoosh84@gmail.com',
     phone: '901-555-5555'
     )
+
+Address.create!(
+    name: 859,
+    street: 'Harbor Bend Rd',
+    city: 'Memphis',
+    state: 'TN',
+    homeOwner_id: josh.id
+    )
+
+IssueCategory.create!(
+	name: "Test"
+	)
