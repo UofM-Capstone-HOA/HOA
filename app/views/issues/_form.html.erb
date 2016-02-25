@@ -1,17 +1,57 @@
-<%= form_for(@issue) do |f| %>
-  <% if @issue.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+<section id="issue_form" class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l8 offset-l2 ">
+       <div class="card">
+         <div class="card-content center-align"> 
+          <%= form_for(@issue) do |f| %>
+            
+            <% if @issue.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
 
-      <ul>
-      <% @issue.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% @issue.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col s12">
+                <p class="center-align"><%= @issue_date.html_safe %><p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                
+                <%= f.collection_select(:address_id, @addresses, :id, :id, {}, {class: "select-two select-two-style"}) %>
+                <label for= "issue_note">Address</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                
+                <%= f.text_area :note, id: "issue_note", class: "materialize-textarea" %>
+                <%= f.label :note, for: "issue_note"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.file_field :picture, id: "issue_picture", class: "materialize-textarea" %>
+                <%= f.label :picture, for: "issue_picture"%>
+              </div>
+            </div>
+  
+
+            
+            <div class="actions waves-effect waves-light btn">
+              <%= f.submit %>
+            </div>
+          <% end %>
+         </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
   </div>
-<% end %>
+</section>

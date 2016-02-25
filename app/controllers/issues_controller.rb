@@ -1,5 +1,7 @@
 class IssuesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
+
 
   # GET /issues
   # GET /issues.json
@@ -10,11 +12,17 @@ class IssuesController < ApplicationController
   # GET /issues/1
   # GET /issues/1.json
   def show
+    @issue = Issue.find(params[:id])
+    @issue_date = @issue.date.strftime('%B %e, %Y')
   end
 
   # GET /issues/new
   def new
     @issue = Issue.new
+    @issue_date = DateTime.now.strftime('%B %e, %Y')
+
+    # current go for the address
+    @adresses = Address.all
   end
 
   # GET /issues/1/edit
@@ -27,6 +35,8 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
 
     respond_to do |format|
+      @issue.date = DateTime.now
+      @issue.homeOwner_id = Address.find(params[@issue.address_id]).homeOwner_id
       if @issue.save
         format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }
@@ -70,5 +80,10 @@ class IssuesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
       params[:issue]
+    #   params.require(:issue).permit(
+    #   :date,
+    #   :note,
+    #   :picture
+    # )
     end
 end

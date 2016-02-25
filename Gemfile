@@ -52,3 +52,9 @@ gem 'devise'
 
 # Material design gem
 gem 'materialize-sass'
+
+# Image uploader
+gem 'carrierwave'
+
+# npt sure what this is for yet but possibly w/ carrierwave
+# gem "rmagick"
