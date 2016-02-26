@@ -33,6 +33,11 @@ ready = function() {
 	// to make matrailize's select work
 	$('select').material_select();
 
+	// collapsable
+	$('.collapsible').collapsible({
+      		accordion : false  
+    	});
+
 };
 
 $(document).ready(ready);
@@ -55,5 +60,6 @@ $(document).on('page:load', ready);
 // 		$('select').material_select();
 // 	}); // end of document ready
 // })(jQuery); 
+
 
 

@@ -1,5 +1,13 @@
-<h1>New Home Owner</h1>
 
-<%= render 'form' %>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
 
-<%= link_to 'Back', home_owners_path %>
+<%= render 'home_owners/new' %>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>

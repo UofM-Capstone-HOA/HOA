@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   devise_for :users
 
   devise_scope :user do
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
   resources :home_owners
   resources :addresses
   resources :issue_categories
-
+  resources :admin
 
 
  #root to: 'application#index'
