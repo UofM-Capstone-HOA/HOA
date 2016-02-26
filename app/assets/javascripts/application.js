@@ -36,7 +36,12 @@ ready = function() {
 	// collapsable
 	$('.collapsible').collapsible({
       		accordion : false  
-    	});
+    });
+
+    // dismiss the popup
+	$('.modal-trigger').leanModal({
+    	dismissible: true
+  	});
 
 };
 

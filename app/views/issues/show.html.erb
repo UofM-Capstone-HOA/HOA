@@ -9,24 +9,41 @@
           
             <div class="row">
               <div class="col s12">
-                <p class="center-align"><%= @issue.date.strftime('%B %e, %Y') %><p>
+                <label class="active" for="date2">Issue created on:</label>
+                <p class="center-align" id="date2"><%= @issue.date.strftime('%B %e, %Y') %><p>
               </div>
             </div>
             <div class="row">
               <div class="col s12">
-                <p class="center-align"><%= @issue.home_owner.fullname %><p>
+                <label class="active" for="address2">Address</label>
+                <p class="center-align" id="address2"><%= @issue.address.full_address %><p>
+                
+              </div>
+            </div>
+             <div class="row">
+              <div class="col s12">
+                <label class="active" for="name2">Homeowner</label>
+                <p class="center-align" id="name2"><%= @issue.home_owner.fullname %><p>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="col s12">
+                <label class="active" for="issuecat2">Issue Category</label>
+                <p class="center-align" id="issuecat2"><%= @issue.issue_category.name %><p>
+              </div>
+            </div>
+           
+            <div class="row">
+              <div class="col s12">
+               <label class="active" for="issue_note2">Note</label>
                 <p class="center-align" id="issue_note2"><%= @issue.note.html_safe %><p>
-            	<label class="active" for="first_name2">Note</label>
+            	
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-              	<img class ="img-responsive"  id="issue_picture2" src = "<%= @issue.picture.url %>">
-                <label class="picture" for="issue_picture2">Picture</label>
+              	<img class ="responsive-img"  id="issue_picture2" src = "<%= @issue.picture.url %>">
+                <!-- <label class="picture" for="issue_picture2">Picture</label> -->
               </div>
             </div>
   
