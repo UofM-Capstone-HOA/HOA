@@ -28,6 +28,12 @@
 
 		// Scrollspy scrolling tracking
 		$('.scrollspy').scrollSpy();
+		
+		// Collapsible
+		$('.collapsible').collapsible({
+      		accordion : false  
+    	});
+
 	}); // end of document ready
 })(jQuery); 
 

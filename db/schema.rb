@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20160225213645) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.integer  "number"
+    t.string   "name"
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.string   "country",      default: "USA"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.string   "country"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "homeOwner_id"
   end
 

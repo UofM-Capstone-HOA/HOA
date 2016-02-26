@@ -1,17 +1,46 @@
 <h1>Admin#index</h1>
 <p>Find me in app/views/admin/index.html.erb</p>
 
-<div >
-<%= render 'home_owners/index' %>
-</div>
-<div >
-<%= render 'home_owners/new' %>
-</div>
+<ul class="collapsible popout" data-collapsible="accordion">
+	<li>
+		<div class="collapsible-header">
+			<p>Edit Homeowners</p>
+		</div>       
+		
+		<div class="collapsible-body">
+			<%= render 'home_owners/index' %>
+		</div>
+	
+	</li>
 
-<div >
-<%= render 'addresses/index' %>
-</div>
+	  <!-- Modal Trigger -->
+  
 
-<div >
-<%= render 'issue_categories/index' %>
-</div>
+
+
+	
+
+	<li>
+		<div class="collapsible-header">
+			<p>Edit Adresses</p>
+		</div> 
+		
+		<div class="collapsible-body">
+			<%= render 'addresses/index' %>
+		</div>
+	</li>
+
+	<li>
+		<div class="collapsible-header">
+			<p>Edit Issue Categories</p>
+		</div> 
+
+		<div class="collapsible-body">
+			<%= render 'issue_categories/index' %>
+		</div>
+	</li>
+</ul>
+		
+		<div class="hidden" >
+			<%= render 'home_owners/new' %>
+		</div>
