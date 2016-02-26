@@ -1,4 +1,4 @@
-<section id="ho_index">
+<section id="ic_index">
   <div class="section">
     <div class="row">
       <div class="col s12 center-align">
@@ -15,9 +15,9 @@
           <tbody>
             <% @issue_categories.each do |issue_category| %>
               <tr>
-                <td><%= issue_category.name %></td>
-                <td><%= link_to 'Show', issue_category %></td>
-                <td><%= link_to 'Edit', edit_issue_category_path(issue_category) %></td>
+                <td><%= issue_category.name %></td>                
+                <td><a class="modal-trigger" href='#show_ic'>Show</a></td>
+                <td> <a class="modal-trigger" href='#edit_ic'>EDIT</a></td>
                 <td><%= link_to 'Destroy', issue_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
@@ -36,6 +36,20 @@
             <%= render 'issue_categories/new' %>
           </div>
         </div>
+
+        <div id="show_ic" class="modal">
+          <div class="modal-content">            
+            <%= render 'issue_categories/show' %>            
+          </div>
+        </div>
+
+        <div id="edit_ic" class="modal">
+          <div class="modal-content">            
+            <%= render 'issue_categories/edit' %>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>

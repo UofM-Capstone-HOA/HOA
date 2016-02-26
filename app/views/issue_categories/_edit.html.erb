@@ -1,6 +1,7 @@
 <h1>Editing Issue Category</h1>
 
-<%= render 'form' %>
+<%= render 'issue_categories/form' %>
 
-<%= link_to 'Show', @issue_category %> |
-<%= link_to 'Back', issue_categories_path %>
+<%= link_to 'Show', 'issue_categories/show' %> |
+
+<%= link_to 'Back', admin_path(current_user) %>

@@ -11,6 +11,7 @@ class IssueCategoriesController < ApplicationController
   # GET /issue_categories/1
   # GET /issue_categories/1.json
   def show
+    @issue_category = IssueCategory.find(params[:id])
   end
 
   # GET /issue_categories/new
@@ -20,6 +21,7 @@ class IssueCategoriesController < ApplicationController
 
   # GET /issue_categories/1/edit
   def edit
+    @issue_category = IssueCategory.find(params[:id])
   end
 
   # POST /issue_categories
@@ -29,10 +31,10 @@ class IssueCategoriesController < ApplicationController
 
     respond_to do |format|
       if @issue_category.save
-        format.html { redirect_to @issue_category, notice: 'Issue category was successfully created.' }
+        format.html { redirect_to admin_path(current_user), notice: 'Issue category was successfully created.' }
         format.json { render :show, status: :created, location: @issue_category }
       else
-        format.html { render :new }
+        format.html { render admin_path(current_user) }
         format.json { render json: @issue_category.errors, status: :unprocessable_entity }
       end
     end
@@ -43,10 +45,10 @@ class IssueCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @issue_category.update(issue_category_params)
-        format.html { redirect_to @issue_category, notice: 'Issue category was successfully updated.' }
+        format.html { redirect_to admin_path(current_user), notice: 'Issue category was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue_category }
       else
-        format.html { render :edit }
+        format.html { render admin_path(current_user) }
         format.json { render json: @issue_category.errors, status: :unprocessable_entity }
       end
     end
@@ -57,7 +59,7 @@ class IssueCategoriesController < ApplicationController
   def destroy
     @issue_category.destroy
     respond_to do |format|
-      format.html { redirect_to issue_categories_url, notice: 'Issue category was successfully destroyed.' }
+      format.html { redirect_to admin_path(current_user), notice: 'Issue category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
