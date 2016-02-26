@@ -35,6 +35,12 @@ $primary-color: color("blue", "lighten-2") !default;*/
 @media #{$medium-and-down} {
 
 }
+img{
+    max-width:400px;
+    max-height:400px;
+   /* margin-right: 10px;
+    margin-top: 30px;*/
+}
 
 .img-parallax{
 	max-height: 1000px;
