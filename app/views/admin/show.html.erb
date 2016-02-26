@@ -1,0 +1,46 @@
+<section id="admin_show">
+  <div class="section">
+    <div class="row">
+    	<div class="col s12">
+
+		<h1>Admin</h1>
+
+
+			<ul class="collapsible popout" data-collapsible="accordion">
+				<li>
+					<div class="collapsible-header">
+						<p>Edit Homeowners</p>
+					</div>       
+					
+					<div class="collapsible-body">
+						<%= render 'home_owners/index' %>
+					</div>
+				
+				</li>
+
+
+				<li>
+					<div class="collapsible-header">
+						<p>Edit Adresses</p>
+					</div> 
+					
+					<div class="collapsible-body">
+						<%= render 'addresses/index' %>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header">
+						<p>Edit Issue Categories</p>
+					</div> 
+
+					<div class="collapsible-body">
+						<%= render 'issue_categories/index' %>
+					</div>
+				</li>
+			</ul>
+
+			</div>	
+		</div>
+	</div>
+</section>		

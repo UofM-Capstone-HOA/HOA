@@ -1,34 +1,48 @@
-<p id="notice"><%= notice %></p>
+<section id="ho_index">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center-align">
+        <h5>Home Owners</h5>
 
-<h1>Listing Home Owners</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @home_owners.each do |home_owner| %>
-      <tr>
-        <td><%= home_owner.firstname %></td>
-        <td><%= home_owner.lastname %></td>
-        <td><%= home_owner.email %></td>
-        <td><%= home_owner.phone %></td>
-        <td><%= link_to 'Show', home_owner %></td>
-        <td><%= link_to 'Edit', edit_home_owner_path(home_owner) %></td>
-        <td><%= link_to 'Destroy', home_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<a class="modal-trigger waves-effect waves-light btn" href='<%= new_home_owner_path %>'>
-  'New Home Owner'
-</a>
+          <tbody>
+            <% @home_owners.each do |home_owner| %>
+              <tr>
+                <td><%= home_owner.firstname %></td>
+                <td><%= home_owner.lastname %></td>
+                <td><%= home_owner.email %></td>
+                <td><%= home_owner.phone %></td>
+                <td><%= link_to 'Show', home_owner %></td>
+                <td><%= link_to 'Edit', edit_home_owner_path(home_owner) %></td>
+                <td><%= link_to 'Destroy', home_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 center-align">
+        <a class="modal-trigger waves-effect waves-light btn" href='#new_ho'>
+          Add Home Owner
+        </a>
+          
+        <div id="new_ho" class="modal">
+          <div class="modal-content">
+            <%= render 'home_owners/new' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

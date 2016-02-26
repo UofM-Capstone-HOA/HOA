@@ -19,10 +19,7 @@ Rails.application.routes.draw do
 
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
 
-
-  # issue routes
   resources :issues
-
   resources :home_owners
   resources :addresses
   resources :issue_categories

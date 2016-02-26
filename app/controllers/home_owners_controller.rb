@@ -28,11 +28,11 @@ class HomeOwnersController < ApplicationController
     @home_owner = HomeOwner.new(home_owner_params)
 
     respond_to do |format|
-      if @home_owner.save
-        format.html { redirect_to @home_owner, notice: 'Home owner was successfully created.' }
+      if @home_owner.save!
+        format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully created.' }
         format.json { render :show, status: :created, location: @home_owner }
       else
-        format.html { render :new }
+        format.html { render admin_path(current_user) }
         format.json { render json: @home_owner.errors, status: :unprocessable_entity }
       end
     end
@@ -70,6 +70,6 @@ class HomeOwnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_owner_params
-      params.require(:home_owner).permit(:firstName, :lastName, :email, :phone)
+      params.require(:home_owner).permit(:firstname, :lastname, :email, :phone)
     end
 end
