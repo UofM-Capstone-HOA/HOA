@@ -7,6 +7,8 @@ class AdminController < ApplicationController
   @issue_categories = IssueCategory.all
 
   @home_owner = HomeOwner.new
+  @issue_category = IssueCategory.new
+  
 
   end
 
