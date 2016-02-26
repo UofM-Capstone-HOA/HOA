@@ -13,8 +13,6 @@ class IssuesController < ApplicationController
   # GET /issues/1.json
   def show
     @issue = Issue.find(params[:id])
-    @issue_date = @issue.date.strftime('%B %e, %Y')
-    @issue_ho = HomeOwner.where(["id=?", :homeOwner_id]).fullname
 
   end
 
@@ -39,9 +37,9 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       @issue.date = DateTime.now
-      @issue.homeOwner_id = Address.where(["id = ?", :address_id]).select("homeOwner_id")
-      if @issue.save
-        format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
+      @issue.home_owner = Address.find(@issue.address_id).home_owner
+      if @issue.save!
+        format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }
       else
         format.html { render :new }
@@ -88,8 +86,8 @@ class IssuesController < ApplicationController
       :note,
       :picture,
       :address_id,
-      :homeOwner_id, 
-      :issueCategory_id
+      :home_owner_id, 
+      :issue_category_id
     )
     end
 end

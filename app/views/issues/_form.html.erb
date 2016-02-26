@@ -25,13 +25,13 @@
             <div class="row">
               <div class="input-field col s12">
                 
-                <%= f.collection_select(:address_id, @addresses, :id, :id, {prompt: "Address"}, {class: "select-two select-two-style", id: "issue_address"}) %>
+                <%= f.collection_select(:address_id, @addresses, :id, :full_address, {prompt: "Address"}, {class: "select-two select-two-style", id: "issue_address"}) %>
                 <!-- <label for= "issue_address">Address</label> -->
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <%= f.collection_select(:issueCategory_id, @issue_categories, :id, :id, {prompt: "Issue Category"}, {class: "select-two select-two-style", id: "issue_cat"}) %>
+                <%= f.collection_select(:issue_category_id, @issue_categories, :id, :name, {prompt: "Issue Category"}, {class: "select-two select-two-style", id: "issue_cat"}) %>
                 <!-- <label for= "issue_cat">Issue Category</label> -->
               </div>
             </div>
@@ -49,7 +49,7 @@
                   <span>Add Picture</span>
                   <%= f.file_field :picture, id: "issue_picture" %>
                 </div>
-                <input class="file-path validate center-align" type="text"/>
+                <input class="file-path validate center-align" type="text" accept="image/*"/>
               </div>
             </div>
   

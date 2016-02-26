@@ -1,3 +1,3 @@
 class Letter < ActiveRecord::Base
-  belongs_to :issueId
+  belongs_to :issue
 end

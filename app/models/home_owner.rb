@@ -1,10 +1,10 @@
 class HomeOwner < ActiveRecord::Base
-	# added this not 100%
 	has_many :issues
+	has_many :addresses
 
-  	def self.fullname
+  	def fullname
   		# this is not wirking ass it should
-  		[:lastName, :firstName].join(', ')
-    	# "#{lastName}, #{firstName}"
+  		# [:lastName, :firstName].join(', ')
+    	"#{lastname}, #{firstname}"
   	end
 end

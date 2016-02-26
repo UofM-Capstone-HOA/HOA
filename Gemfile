@@ -56,5 +56,8 @@ gem 'materialize-sass'
 # Image uploader
 gem 'carrierwave'
 
+# For GPS data
+gem 'geocoder'
+
 # npt sure what this is for yet but possibly w/ carrierwave
 # gem "rmagick"

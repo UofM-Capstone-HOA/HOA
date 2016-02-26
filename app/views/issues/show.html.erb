@@ -9,12 +9,12 @@
           
             <div class="row">
               <div class="col s12">
-                <p class="center-align"><%= @issue_date.html_safe %><p>
+                <p class="center-align"><%= @issue.date.strftime('%B %e, %Y') %><p>
               </div>
             </div>
             <div class="row">
               <div class="col s12">
-                <p class="center-align"><%= @issue_ho %><p>
+                <p class="center-align"><%= @issue.home_owner.fullname %><p>
               </div>
             </div>
             <div class="row">

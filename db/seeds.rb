@@ -7,20 +7,24 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
  josh = HomeOwner.create!(
-    firstName: 'Josh',
-    lastName: 'Restuccio',
+    firstname: 'Josh',
+    lastname: 'Restuccio',
     email: 'jstoosh84@gmail.com',
     phone: '901-555-5555'
     )
 
-Address.create!(
+ad1 = Address.create!(
     name: 859,
     street: 'Harbor Bend Rd',
     city: 'Memphis',
-    state: 'TN',
-    homeOwner_id: josh.id
+    state: 'TN'
     )
+josh.addresses.push(ad1)
+josh.save!
 
 IssueCategory.create!(
 	name: "Test"
 	)
+
+kevin = User.create!(email: "kevin@memphis.edu", password: "password",
+                     password_confirmation: "password")

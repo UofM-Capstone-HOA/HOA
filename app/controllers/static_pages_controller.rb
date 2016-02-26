@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 	helper_method :resource_name, :resource, :devise_mapping
 
   def welcome
-    re
+    
   end
 
   def resource_name
@@ -20,6 +20,7 @@ class StaticPagesController < ApplicationController
   before_action :authenticate_user!
 
 	def home
+
 	end
 
 	

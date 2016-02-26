@@ -22,16 +22,16 @@ ActiveRecord::Schema.define(version: 20160217021151) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "homeOwner_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "home_owner_id"
   end
 
-  add_index "addresses", ["homeOwner_id"], name: "index_addresses_on_homeOwner_id", using: :btree
+  add_index "addresses", ["home_owner_id"], name: "index_addresses_on_home_owner_id", using: :btree
 
   create_table "home_owners", force: :cascade do |t|
-    t.string   "firstName"
-    t.string   "lastName"
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "email"
     t.string   "phone"
     t.datetime "created_at", null: false
@@ -50,23 +50,23 @@ ActiveRecord::Schema.define(version: 20160217021151) do
     t.boolean  "resolved"
     t.text     "note"
     t.string   "picture"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "address_id"
-    t.integer  "homeOwner_id"
+    t.integer  "home_owner_id"
     t.integer  "letter_id"
     t.integer  "user_id"
-    t.integer  "issueCategory_id"
+    t.integer  "issue_category_id"
   end
 
   add_index "issues", ["address_id"], name: "index_issues_on_address_id", using: :btree
-  add_index "issues", ["homeOwner_id"], name: "index_issues_on_homeOwner_id", using: :btree
-  add_index "issues", ["issueCategory_id"], name: "index_issues_on_issueCategory_id", using: :btree
+  add_index "issues", ["home_owner_id"], name: "index_issues_on_home_owner_id", using: :btree
+  add_index "issues", ["issue_category_id"], name: "index_issues_on_issue_category_id", using: :btree
   add_index "issues", ["letter_id"], name: "index_issues_on_letter_id", using: :btree
   add_index "issues", ["user_id"], name: "index_issues_on_user_id", using: :btree
 
   create_table "letters", force: :cascade do |t|
-    t.integer  "letterNum"
+    t.integer  "letternum"
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
