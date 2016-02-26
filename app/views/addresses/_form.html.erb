@@ -28,8 +28,7 @@
     <%= f.text_field :state %>
   </div>
   <div class="field">
-    <%= f.label :homeOwner_id %><br>
-    <%= f.text_field :homeOwner_id %>
+   <%= f.collection_select(:home_owner_id, @home_owners, :id, :fullname, {prompt: "Home Owner"}, {class: "select-two select-two-style", id: "issue_address"}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

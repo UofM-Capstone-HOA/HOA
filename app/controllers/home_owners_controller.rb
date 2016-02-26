@@ -28,7 +28,7 @@ class HomeOwnersController < ApplicationController
     @home_owner = HomeOwner.new(home_owner_params)
 
     respond_to do |format|
-      if @home_owner.save!
+      if @home_owner.save
         format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully created.' }
         format.json { render :show, status: :created, location: @home_owner }
       else

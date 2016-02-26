@@ -29,7 +29,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
+        format.html { redirect_to admin_path(current_user), notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
       else
         format.html { render :new }
@@ -43,10 +43,10 @@ class AddressesController < ApplicationController
   def update
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to @address, notice: 'Address was successfully updated.' }
+        format.html { redirect_to admin_path(current_user), notice: 'Address was successfully updated.' }
         format.json { render :show, status: :ok, location: @address }
       else
-        format.html { render :edit }
+        format.html { render admin_path(current_user), error: 'Issue.' }
         format.json { render json: @address.errors, status: :unprocessable_entity }
       end
     end
@@ -57,14 +57,17 @@ class AddressesController < ApplicationController
   def destroy
     @address.destroy
     respond_to do |format|
-      format.html { redirect_to addresses_url, notice: 'Address was successfully destroyed.' }
+      format.html { redirect_to admin_path(current_user), notice: 'Address was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-  # Display the complete address
-  def full_address
-    [:name, :street].join(' ')
+  def address_modal
+    @address = set_address(:id)
+    # @user_list = User.all
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   private
