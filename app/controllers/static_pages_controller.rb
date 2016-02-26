@@ -1,4 +1,4 @@
-sclass StaticPagesController < ApplicationController
+class StaticPagesController < ApplicationController
 	helper_method :resource_name, :resource, :devise_mapping
 
   def welcome
@@ -22,6 +22,5 @@ sclass StaticPagesController < ApplicationController
 	def home
 
 	end
-
 	
 end
