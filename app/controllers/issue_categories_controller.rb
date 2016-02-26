@@ -6,12 +6,14 @@ class IssueCategoriesController < ApplicationController
   # GET /issue_categories.json
   def index
     @issue_categories = IssueCategory.all
+
   end
 
   # GET /issue_categories/1
   # GET /issue_categories/1.json
   def show
     @issue_category = IssueCategory.find(params[:id])
+
   end
 
   # GET /issue_categories/new
@@ -21,7 +23,7 @@ class IssueCategoriesController < ApplicationController
 
   # GET /issue_categories/1/edit
   def edit
-    @issue_category = IssueCategory.find(params[:id])
+    #@issue_category = IssueCategory.find(params[:id])
   end
 
   # POST /issue_categories

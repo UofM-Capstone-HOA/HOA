@@ -22,6 +22,7 @@
 				<li><a href="#!" class="brand-logo"><i>Logo</i></a></li>
 	    		<li><%=link_to 'New Issue', new_issue_path(), class: "waves-effect waves-purple"%></li>
 	    		<li><%=link_to 'Admin', admin_path(current_user), class: "waves-effect waves-purple"%></li>
+	    		<li><%=link_to 'Routes', admin_path(current_user), class: "waves-effect waves-purple"%></li>
 	    		<li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete, class: "waves-effect waves-purple"%></li>
 	  		</ul>
 	  		<ul id="slide-out" class="side-nav">

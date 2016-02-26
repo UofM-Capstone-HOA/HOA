@@ -16,8 +16,8 @@
             <% @issue_categories.each do |issue_category| %>
               <tr>
                 <td><%= issue_category.name %></td>                
-                <td><a class="modal-trigger" href='#show_ic'>Show</a></td>
-                <td> <a class="modal-trigger" href='#edit_ic'>EDIT</a></td>
+                <td><a class="modal-trigger" href='#show_ic'>Show</a></td>                
+                <td> <a class="modal-trigger" href='#edit_ic'>Edit</a></td>
                 <td><%= link_to 'Destroy', issue_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
