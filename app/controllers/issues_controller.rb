@@ -37,7 +37,8 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       @issue.date = DateTime.now
-      @issue.home_owner = Address.find(@issue.address_id).home_owner
+      @issue.home_owner = @issue.address.home_owner
+      @issue.user = current_user
       if @issue.save!
         format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }

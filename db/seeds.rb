@@ -14,7 +14,7 @@
     )
 
 ad1 = Address.create!(
-    name: 859,
+    number: 859,
     street: 'Harbor Bend Rd',
     city: 'Memphis',
     state: 'TN'

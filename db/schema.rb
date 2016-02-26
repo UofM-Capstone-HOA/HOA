@@ -17,16 +17,14 @@ ActiveRecord::Schema.define(version: 20160225213645) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "name"
+    t.integer  "number"
     t.string   "street"
     t.string   "city"
     t.string   "state"
-
-    t.string   "country",      default: "USA"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "country",       default: "USA"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "home_owner_id"
-
   end
 
   add_index "addresses", ["home_owner_id"], name: "index_addresses_on_home_owner_id", using: :btree
