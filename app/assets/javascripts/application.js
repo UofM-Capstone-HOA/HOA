@@ -18,17 +18,42 @@
 
 
 // Initialize jQuery
-(function($){
-	$(function(){
-		//Navbar collapse load
-		$(".button-collapse").sideNav();
+var ready;
+ready = function() {
 
-		//Parallax scrolling load
-		$('.parallax').parallax();
+	//Navbar collapse load
+	$(".button-collapse").sideNav();
 
-		// Scrollspy scrolling tracking
-		$('.scrollspy').scrollSpy();
-	}); // end of document ready
-})(jQuery); 
+	//Parallax scrolling load
+	$('.parallax').parallax();
+
+	// Scrollspy scrolling tracking
+	$('.scrollspy').scrollSpy();
+
+	// to make matrailize's select work
+	$('select').material_select();
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+
+
+// (function($){
+// 	$(function(){
+// 		//Navbar collapse load
+// 		$(".button-collapse").sideNav();
+
+// 		//Parallax scrolling load
+// 		$('.parallax').parallax();
+
+// 		// Scrollspy scrolling tracking
+// 		$('.scrollspy').scrollSpy();
+
+// 		// to make matrailize's select work
+// 		$('select').material_select();
+// 	}); // end of document ready
+// })(jQuery); 
 
 

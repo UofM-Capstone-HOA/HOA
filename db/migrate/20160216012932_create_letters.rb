@@ -3,7 +3,7 @@ class CreateLetters < ActiveRecord::Migration
     create_table :letters do |t|
       #t.primary_key :id
       #t.references :issue, index: true, foreign_key: true
-      t.integer :letterNum
+      t.integer :letternum
       t.datetime :date
 
       t.timestamps null: false

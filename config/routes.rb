@@ -8,11 +8,22 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'static_pages#welcome', as: :unauthenticated_root
     end
   end
 
-   get 'home', to: 'static_pages#home', as: 'home'
+  # Temporary home
+  get 'home', to: 'static_pages#home', as: 'home'
+
+  get 'welcome', to: 'static_pages#welcome', as: 'welcome'
+
+
+  # issue routes
+  resources :issues
+
+  resources :home_owners
+  resources :addresses
+  resources :issue_categories
 
 
 
