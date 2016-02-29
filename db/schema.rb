@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 20160225213645) do
 
   create_table "issues", force: :cascade do |t|
     t.datetime "date"
-    t.boolean  "lien"
-    t.boolean  "resolved"
+    t.boolean  "lien",              default: false
+    t.boolean  "resolved",          default: false
     t.text     "note"
     t.string   "picture"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "address_id"
     t.integer  "home_owner_id"
     t.integer  "letter_id"
