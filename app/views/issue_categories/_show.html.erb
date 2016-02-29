@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @issue_category.name %>
+</p>
+
+
+<div id="edit_ic" class="modal">
+          <div class="modal-content">
+            <%= render 'issue_categories/edit' %>
+          </div>
+        </div>
+
+<%= link_to 'Back', admin_path(current_user) %>

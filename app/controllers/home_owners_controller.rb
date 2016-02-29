@@ -43,10 +43,10 @@ class HomeOwnersController < ApplicationController
   def update
     respond_to do |format|
       if @home_owner.update(home_owner_params)
-        format.html { redirect_to @home_owner, notice: 'Home owner was successfully updated.' }
+        format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully updated.' }
         format.json { render :show, status: :ok, location: @home_owner }
       else
-        format.html { render :edit }
+        format.html { render admin_path(current_user) }
         format.json { render json: @home_owner.errors, status: :unprocessable_entity }
       end
     end
@@ -57,7 +57,7 @@ class HomeOwnersController < ApplicationController
   def destroy
     @home_owner.destroy
     respond_to do |format|
-      format.html { redirect_to home_owners_url, notice: 'Home owner was successfully destroyed.' }
+      format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
