@@ -90,6 +90,8 @@ class IssuesController < ApplicationController
       :date,
       :note,
       :picture,
+      :lien,
+      :resolved,
       :address_id,
       :home_owner_id, 
       :issue_category_id

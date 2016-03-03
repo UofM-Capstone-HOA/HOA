@@ -17,4 +17,14 @@ class Issue < ActiveRecord::Base
   # 	Address.find(self.addressId)
   # end 
 
+  def issue_status
+    if lien == false && resolved == false
+      "Open"
+    elsif resolved == true
+      "Resolved"
+    else
+      "Lien"
+    end
+  end
+
 end
