@@ -78,6 +78,9 @@ kevin = User.create!(email: "kevin@memphis.edu", password: "password",
 
 joshU = User.create!(email: "jstoosh84@gmail.com", password: "password", password_confirmation: "password")
 
+moo = User.create!(email: "moo@gmail.com", password: "password",
+                    password_confirmation: "password")
+
 i1 = Issue.create!([
     {
     date: DateTime.parse("26/2/2016 8:00"),
