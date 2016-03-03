@@ -28,6 +28,10 @@ class IssuesController < ApplicationController
 
   # GET /issues/1/edit
   def edit
+    @issue = Issue.find(params[:id])
+    @issue_date = DateTime.now.strftime('%B %e, %Y')
+    @addresses = Address.all
+    @issue_categories = IssueCategory.all
   end
 
   # POST /issues

@@ -30,9 +30,10 @@ class HomeOwnersController < ApplicationController
     respond_to do |format|
       if @home_owner.save
         format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully created.' }
-        format.json { render :show, status: :created, location: @home_owner }
+        format.json { render :show, status: :created }#, location: @admin }
       else
-        format.html { render 'admin/show', id: current_user }
+        # @home_owners = HomeOwner.all
+        format.html { render "admin/show", id: current_user }
         format.json { render json: @home_owner.errors, status: :unprocessable_entity }
       end
     end
@@ -44,9 +45,9 @@ class HomeOwnersController < ApplicationController
     respond_to do |format|
       if @home_owner.update(home_owner_params)
         format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully updated.' }
-        format.json { render :show, status: :ok, location: @home_owner }
+        format.json { render :show, status: :ok }#, location: @admin }
       else
-        format.html { render admin_path(current_user) }
+        format.html { render "admin/show", id: current_user  }
         format.json { render json: @home_owner.errors, status: :unprocessable_entity }
       end
     end

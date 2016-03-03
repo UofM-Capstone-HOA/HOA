@@ -4,7 +4,7 @@
       <div class="col s12 center-align">
         <h5>Listing Addresses</h5>
 
-            <table>
+            <table class="responsive-table">
               <thead>
                 <tr>
                   <th>Number</th>
@@ -23,7 +23,7 @@
                     <td><%= address.street %></td>
                     <td><%= address.city %></td>
                     <td><%= address.state %></td>
-                    <td><%= address.home_owner.fullname %></td>
+                    <td><%= address.home_owner ? address.home_owner.fullname : ""%></td>
                     <td><%= link_to 'Show', address %></td>
                     <td><%= link_to 'Edit', edit_address_path(address) %></td>
                     <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -38,7 +38,7 @@
     <div class="row">
       <div class="col s12 center-align">
         <a class="modal-trigger waves-effect waves-light btn" href='#new_ad'>
-          Add Home Owner
+          New Address
         </a>
           
         <div id="new_ad" class="modal">

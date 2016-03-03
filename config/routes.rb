@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'admin/index'
+  # get 'admin/index'
 
   devise_for :users
 
   devise_scope :user do
     #authenticated is currently set to pantry to be changed later
     authenticated :user do
-      root 'static_pages#home', as: :authenticated_root
+      root 'issues#index', as: :authenticated_root
     end
 
     unauthenticated do
