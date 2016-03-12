@@ -40,10 +40,10 @@ ready = function() {
 
     // dismiss the popup
 	$('.modal-trigger').leanModal({
-    	dismissible: true
+    	dismissible : true
   	});
 
-};
+}; 
 
 $(document).ready(ready);
 $(document).on('page:load', ready);

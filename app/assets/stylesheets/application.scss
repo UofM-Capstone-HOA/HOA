@@ -15,8 +15,8 @@
  */
 
 /* Not sure if this is needed yet. */
-/*@import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;*/
+@import "materialize/components/color";
+$primary-color: color("purple", "lighten-1") !default;
 
 @import 'materialize';
 

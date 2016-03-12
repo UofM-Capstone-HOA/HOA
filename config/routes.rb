@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'home', to: 'static_pages#home', as: 'home'
 
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
+  # post 'home_owner', to: 'admin#show'
 
   resources :issues
   resources :home_owners

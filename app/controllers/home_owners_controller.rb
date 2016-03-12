@@ -32,8 +32,8 @@ class HomeOwnersController < ApplicationController
         format.html { redirect_to admin_path(current_user), notice: 'Home owner was successfully created.' }
         format.json { render :show, status: :created }#, location: @admin }
       else
-        # @home_owners = HomeOwner.all
-        format.html { render "admin/show", id: current_user }
+        format.html { redirect_to admin_path(current_user), error: 'you suck.' }
+        # format.html { render "admin/show", id: current_user }
         format.json { render json: @home_owner.errors, status: :unprocessable_entity }
       end
     end
