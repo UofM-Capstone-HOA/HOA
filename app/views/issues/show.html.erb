@@ -15,6 +15,13 @@
             </div>
             <div class="row">
               <div class="col s12">
+                <label class="active" for="status2">Issue status:</label>
+                <p class="center-align" id="status2"><%= @issue.issue_status %>
+                <p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
                 <label class="active" for="address2">Address</label>
                 <p class="center-align" id="address2"><%= @issue.address.full_address %><p>
                 
@@ -40,12 +47,14 @@
             	
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-              	<img class ="responsive-img"  id="issue_picture2" src = "<%= @issue.picture.url %>">
-                <!-- <label class="picture" for="issue_picture2">Picture</label> -->
+            <% if @issue.picture.present? %>
+              <div class="row">
+                <div class="input-field col s12">
+              	 <img class ="responsive-img"  id="issue_picture2" src = "<%= @issue.picture.url %>">
+                  <!-- <label class="picture" for="issue_picture2">Picture</label> -->
+                </div>
               </div>
-            </div>
+            <% end %>
   
 
             
