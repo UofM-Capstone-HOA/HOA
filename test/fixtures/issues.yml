@@ -4,25 +4,25 @@ one:
   id: 1
   date: 2016-02-15 19:12:40
   address_id: 1
-  homeOwner_id: 
+  home_owner_id: 
   letter_id: 
   lien: false
   resolved: false
   user_id: 1
   note: "test"
   picture: "picture"
-  issueCategory_id: 1
+  issue_category_id: 1
 
 two:
   id: 2
   date: 2016-02-15 19:12:40
   address_id: 2
-  homeOwner_id: 
+  home_owner_id: 
   letter_id: 
   lien: false
   resolved: false
   user_id: 1
   note: "test"
   picture: "picture"
-  issueCategory_id: 1
+  issue_category_id: 1
 

@@ -17,8 +17,8 @@ class HomeOwnersControllerTest < ActionController::TestCase
   end
 
   test "should create home_owner" do
-    assert_difference('HomeOwner.count') do
-      post :create, home_owner: { email: @home_owner.email, firstName: @home_owner.firstName, lastName: @home_owner.lastName, phone: @home_owner.phone }
+    assert_difference('home_owner.count') do
+      post :create, home_owner: { email: @home_owner.email, firstName: @home_owner.firstname, lastName: @home_owner.lastname, phone: @home_owner.phone }
     end
 
     assert_redirected_to home_owner_path(assigns(:home_owner))
@@ -35,12 +35,12 @@ class HomeOwnersControllerTest < ActionController::TestCase
   end
 
   test "should update home_owner" do
-    patch :update, id: @home_owner, home_owner: { email: @home_owner.email, firstName: @home_owner.firstName, lastName: @home_owner.lastName, phone: @home_owner.phone }
+    patch :update, id: @home_owner, home_owner: { email: @home_owner.email, firstName: @home_owner.firstname, lastName: @home_owner.lastname, phone: @home_owner.phone }
     assert_redirected_to home_owner_path(assigns(:home_owner))
   end
 
   test "should destroy home_owner" do
-    assert_difference('HomeOwner.count', -1) do
+    assert_difference('home_owner.count', -1) do
       delete :destroy, id: @home_owner
     end
 

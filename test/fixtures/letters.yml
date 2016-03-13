@@ -3,11 +3,11 @@
 one:
   id: 1
   issue_id: 
-  letterNum: 1
+  letternum: 1
   date: 2016-02-15 19:29:32
 
 two:
   id: 2
   issue_id: 
-  letterNum: 1
+  letternum: 1
   date: 2016-02-15 19:29:32

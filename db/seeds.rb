@@ -75,11 +75,14 @@ is1 = IssueCategory.create!(
 
 kevin = User.create!(email: "kevin@memphis.edu", password: "password",
                      password_confirmation: "password")
+kevin.save!
 
 joshU = User.create!(email: "jstoosh84@gmail.com", password: "password", password_confirmation: "password")
+joshU.save!
 
 moo = User.create!(email: "moo@gmail.com", password: "password",
                     password_confirmation: "password")
+moo.save!
 
 i1 = Issue.create!([
     {

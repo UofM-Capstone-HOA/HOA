@@ -20,7 +20,6 @@ class IssuesControllerTest < ActionController::TestCase
     assert_difference('Issue.count') do
       post :create, issue: {  }
     end
-
     assert_redirected_to issue_path(assigns(:issue))
   end
 
