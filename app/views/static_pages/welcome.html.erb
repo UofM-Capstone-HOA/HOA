@@ -1,5 +1,5 @@
 <!-- Login Section -->
-<section id="login" class="parallax-container scrollspy">
+<section id="login" class="parallax-container">
   <div class="section">
     <div class="row">
       <div class="col s12 m8 offset-m2 l8 offset-l2 ">
@@ -24,9 +24,12 @@
                   <%= f.label :remember_me %>
                 </div>
               <% end -%>
-
-              <div class="actions waves-effect waves-light btn">
-                <%= f.submit "Log in" %>
+              <div class='row'>
+                <div class='col s12'>
+                <div class="actions waves-effect waves-light btn">
+                  <%= f.submit "Log in" %>
+                </div>
+                </div>
               </div>
               <%= render "devise/shared/links" %>
             <% end %>
