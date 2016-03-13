@@ -1,10 +1,11 @@
+<%= form_for(@issue) do |f| %>
 <section id="issue_form" class="container">
   <div class="section">
     <div class="row">
       <div class="col s12 m8 offset-m2 l8 offset-l2 ">
        <div class="card">
          <div class="card-content center-align"> 
-          <%= form_for(@issue) do |f| %>
+          
             
             <% if @issue.errors.any? %>
               <div id="error_explanation">
@@ -43,25 +44,54 @@
               </div>
             </div>
             <div class="row">
-              <div class="col s12 file-field input-field gallery_picture">
+              <div class=" file-field input-field gallery_picture">
 
-                <div class="btn waves-effect waves-light">
+                <div class="col s4 btn waves-effect waves-light">
                   <span>Add Picture</span>
                   <%= f.file_field :picture, id: "issue_picture" %>
                 </div>
-                <input class="file-path validate center-align" type="text" accept="image/*"/>
+                <input class="col s8 file-path validate center-align" type="text" accept="image/*"/>
               </div>
             </div>
-  
-
-            
-            <div class="actions waves-effect waves-light btn">
-              <%= f.submit %>
-            </div>
-          <% end %>
+            <div class="row"> 
+              <div class="col s12">
+                <div class=" actions waves-effect waves-light btn"  href='#check_issue'>
+                  <%= f.submit 'Create Issue' %>
+                </div>
+              </div>
+        
          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<% if @issue_show.present? %>
+  <div id="check_issue" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col s12 center-align">
+        <p>This issue could be a duplicate.</p>
+        </div>
+      </div> 
+      <%= render 'issues/show', id: @issue_show.id %>
+    </div> 
+    <div class="modal-footer">
+      <div class="col s6 center-align">
+        <div class="modal-action modal-close waves-effect waves-green btn-flat" onclick="close_mod()">
+          <span>Back</span>
+        </div>
+      </div>
+      <div class='col s6 center-align'>
+        <div class='modal-action modal-close waves-effect waves-green btn-flat'>
+          <%= f.submit 'Create Anyway' %>
+        </div>
+      </div>
+    </div>
+  </div>
+ <script type="text/javascript">
+   $('#check_issue').openModal();
+ </script>
+<% end %>
+<% end %>

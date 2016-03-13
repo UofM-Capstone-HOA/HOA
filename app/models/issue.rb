@@ -8,7 +8,7 @@ class Issue < ActiveRecord::Base
 
   	validates :issue_category, presence: true
     validates :date, :address_id, :user_id, :issue_category_id, :home_owner, presence: true
-    validates :note, length: { in: 1..500}
+    validates :note, length: { in: 0..500}
 
   # for carrierwave
   mount_uploader :picture, ImageUploader

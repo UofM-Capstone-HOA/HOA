@@ -12,7 +12,7 @@ class IssuesController < ApplicationController
   # GET /issues/1
   # GET /issues/1.json
   def show
-    @issue = Issue.find(params[:id])
+    @issue_show = Issue.find(params[:id])
 
   end
 
@@ -34,22 +34,38 @@ class IssuesController < ApplicationController
     @issue_categories = IssueCategory.all
   end
 
+  def show_dup
+    format.js { render :coffee => "open_mod()" }
+  end
+
   # POST /issues
   # POST /issues.json
   def create
     @issue = Issue.new(issue_params)
 
+    # store a possible duplicate
+    # Currently not checking a date range but any possible
+    @issue_show = Issue.where(['address_id = (?) AND issue_category_id = (?)', @issue.address_id, @issue.issue_category_id]).first
+    
     respond_to do |format|
-      @issue.date = DateTime.now
-      @issue.home_owner = @issue.address.home_owner
-      @issue.user = current_user
-      if @issue.save!
-        format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
-        format.json { render :show, status: :created, location: @issue }
-      else
-        format.html { render :new }
-        format.json { render json: @issue.errors, status: :unprocessable_entity }
-      end
+        @issue.date = DateTime.now
+        @issue.home_owner = @issue.address.home_owner
+        @issue.user = current_user
+        
+        if @issue_show.present? and params[:commit] != 'Create Anyway'
+          
+          @addresses = Address.all
+          @issue_categories = IssueCategory.all
+          @issue_date = DateTime.now.strftime('%B %e, %Y')
+          format.html{ render :new }
+          
+        elsif @issue.save! 
+          format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
+          format.json { render :show, status: :created, location: @issue}
+        else
+          format.html { render :new }
+          format.json { render json: @issue.errors, status: :unprocessable_entity }
+        end
     end
   end
 
