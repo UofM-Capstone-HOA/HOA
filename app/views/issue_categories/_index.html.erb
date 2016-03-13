@@ -16,7 +16,32 @@
             <% @issue_categories.each do |issue_category| %>
               <tr>
                 <td><%= issue_category.name %></td>                
-                <td><a class="modal-trigger" href='#show_ic'>Show</a></td>                
+                <!--<td><a class="modal-trigger" id="my_id" data-myvalue="<%= issue_category.id %>" href='#show_ic'>Show</a></td> -->
+
+
+                <td><a href="#" onclick="javascript:openMyModal('<%= issue_category.name %>')">Show</a></td>
+
+
+                  <script type="text/javascript">
+                    $(document).ready(function(){
+                      window.openMyModal = function (showIssueCategory) {
+                        $('#myModal').text(showIssueCategory);
+                        $('#myModal').modal('show');
+                        return false;
+                      }
+                    });
+                  </script>
+
+
+
+
+
+
+
+
+
+
+
                 <td> <a class="modal-trigger" href='#edit_ic'>Edit</a></td>
                 <td><%= link_to 'Destroy', issue_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
@@ -37,11 +62,7 @@
           </div>
         </div>
 
-        <div id="show_ic" class="modal">
-          <div class="modal-content">            
-            <%= render 'issue_categories/show' %>            
-          </div>
-        </div>
+      
 
         <div id="edit_ic" class="modal">
           <div class="modal-content">            
