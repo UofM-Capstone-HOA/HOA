@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'hoaroutes/index'
+
+  get 'hoaroute/index'
+
+  resources :geos
   # get 'admin/index'
 
   devise_for :users
@@ -25,7 +30,7 @@ Rails.application.routes.draw do
   resources :addresses
   resources :issue_categories
   resources :admin
-
+  resources :hoaroutes
 
  #root to: 'application#index'
 

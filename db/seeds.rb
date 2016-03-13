@@ -54,6 +54,7 @@ ad1 = Address.create!([
 ])
 
 
+
 josh.addresses.push(ad1[0])
 josh.addresses.push(ad1[1])
 stephen.addresses.push(ad1[2])

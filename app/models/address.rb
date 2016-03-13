@@ -21,4 +21,8 @@ class Address < ActiveRecord::Base
 		"#{number} #{street} #{city}, #{state} "
 	end
 
+  geocoded_by :full_address
+  after_validation :reverse_geocode
+  
+
 end
