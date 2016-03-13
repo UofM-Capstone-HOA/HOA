@@ -10,7 +10,7 @@
     firstname: 'Josh',
     lastname: 'Restuccio',
     email: 'jstoosh84@gmail.com',
-    phone: '901-555-5555'
+    phone: '901-555-5555',    
     )
 
  stephen = HomeOwner.create!(
@@ -74,12 +74,15 @@ is1 = IssueCategory.create!(
     ])
 
 kevin = User.create!(email: "kevin@memphis.edu", password: "password",
-                     password_confirmation: "password")
+                     password_confirmation: "password", isadmin: 1)
 
-joshU = User.create!(email: "jstoosh84@gmail.com", password: "password", password_confirmation: "password")
+joshU = User.create!(email: "jstoosh84@gmail.com", password: "password", password_confirmation: "password", isadmin: 1)
 
 moo = User.create!(email: "moo@gmail.com", password: "password",
-                    password_confirmation: "password")
+                    password_confirmation: "password", isadmin: 1)
+
+nonAdmin = User.create!(email: "nonAdmin@gmail.com", password: "password",
+                    password_confirmation: "password", isadmin: 0)
 
 i1 = Issue.create!([
     {
