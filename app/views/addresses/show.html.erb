@@ -25,3 +25,6 @@
   <%= @address.home_owner.fullname %>
 </p>
 <% end %>
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', admin_path(current_user) %>
