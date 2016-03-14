@@ -11,6 +11,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1
   # GET /addresses/1.json
   def show
+    
   end
 
   # GET /addresses/new
@@ -20,6 +21,7 @@ class AddressesController < ApplicationController
 
   # GET /addresses/1/edit
   def edit
+    @home_owners = HomeOwner.all
   end
 
   # POST /addresses

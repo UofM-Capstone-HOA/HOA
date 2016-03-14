@@ -1,26 +1,13 @@
+<p id="notice"><%= notice %></p>
 
-<% if issue_category.id? %>
-  <!-- Button trigger modal -->
-  <button class="btn btn-link" data-toggle="modal" data-target="#issue_category-<%= issue_category.id %>-name">
-    Show
-  </button>
+<p>
+  <strong>Issue Category:</strong>
+  <%= @issue_category.name %>
+</p>
 
 
 
-<!-- Modal -->
-  <div class="modal fade" id="issue_category-<%= issue_category.id %>-notes" tabindex="-1" role="dialog" aria-labelledby="issue_category-<%= issue_category.id %>-label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="issue_category-<%= issue_category.id %>-label">Issue Category</h4>
-        </div>
-        <div class="modal-body">
-          <%= issue_category.name %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+
+
+<%= link_to 'Edit', edit_issue_category_path(@issue_category) %> |
+<%= link_to 'Back', issue_categories_path %>
