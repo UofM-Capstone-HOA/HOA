@@ -43,4 +43,14 @@
 			</div>	
 		</div>
 	</div>
-</section>		
+</section>	
+<% if @issue_category_show.present? %>
+        <div id="show_ic" class="modal">
+          <div class="modal-content">            
+            <%= render 'issue_categories/show', id: @issue_category_show %>            
+          </div>
+        </div>
+        <script type="text/javascript">
+          $('#show_ic').openModal();
+        </script>
+<% end %>	

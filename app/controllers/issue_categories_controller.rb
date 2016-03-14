@@ -12,7 +12,7 @@ class IssueCategoriesController < ApplicationController
   # GET /issue_categories/1
   # GET /issue_categories/1.json
   def show
-    @issue_category = IssueCategory.find(params[:id])
+    @issue_category_show = IssueCategory.find(params[:id])
 
   end
 
