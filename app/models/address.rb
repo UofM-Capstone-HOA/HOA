@@ -1,7 +1,7 @@
 class Address < ActiveRecord::Base
 
   belongs_to :home_owner
-  has_many :issues
+  has_many :issues, :dependent => :delete_all
 
   validates :number, :street, :city, :state, :country, presence: true   
   validates :number, length:  { in: 1..6 }

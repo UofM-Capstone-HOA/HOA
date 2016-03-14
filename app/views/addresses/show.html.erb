@@ -19,8 +19,9 @@
   <strong>State:</strong>
   <%= @address.state %>
 </p>
-
+<% if @address.home_owner.present? %>
 <p>
   <strong>Homeowner:</strong>
   <%= @address.home_owner.fullname %>
 </p>
+<% end %>

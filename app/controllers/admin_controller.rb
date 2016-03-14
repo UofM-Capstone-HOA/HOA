@@ -1,5 +1,7 @@
 class AdminController < ApplicationController
 	before_action :authenticate_user!
+	# before_action :redirect_to_root
+
   def show
   
   	@home_owners = HomeOwner.all

@@ -46,10 +46,10 @@
             	
               </div>
             </div>
-            <% if @issue.picture.present? %>
+            <% if @issue_show.picture.present? %>
               <div class="row">
                 <div class="input-field col s12">
-              	 <img class ="responsive-img"  id="issue_picture2" src = "<%= @issue.picture.url %>">
+              	 <img class ="responsive-img"  id="issue_picture2" src = "<%= @issue_show.picture.url %>">
                   <!-- <label class="picture" for="issue_picture2">Picture</label> -->
                 </div>
               </div>

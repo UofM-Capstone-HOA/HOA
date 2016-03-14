@@ -45,7 +45,7 @@ class IssuesController < ApplicationController
 
     # store a possible duplicate
     # Currently not checking a date range but any possible
-    @issue_show = Issue.where(['address_id = (?) AND issue_category_id = (?)', @issue.address_id, @issue.issue_category_id]).first
+    @issue_show = Issue.where(['address_id = (?) AND issue_category_id = (?) AND resolved = false', @issue.address_id, @issue.issue_category_id]).last
     
     respond_to do |format|
         @issue.date = DateTime.now
