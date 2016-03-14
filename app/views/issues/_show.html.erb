@@ -22,7 +22,9 @@
              <div class="row">
               <div class="col s12">
                 <label class="active" for="name2">Homeowner</label>
+                <% if @issue_show.home_owner.present? %>
                 <p class="center-align" id="name2"><%= @issue_show.home_owner.fullname %><p>
+                <% end %>
               </div>
             </div>
             <div class="row">

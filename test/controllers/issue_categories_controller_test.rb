@@ -2,18 +2,20 @@ require 'test_helper'
 
 class IssueCategoriesControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @issue_category = issue_categories(:one)
   end
 
   test "should get index" do
-    get :index
+    get :_index
     assert_response :success
     assert_not_nil assigns(:issue_categories)
   end
 
   test "should get new" do
     get :new
-    assert_response :success
+    assert_template layout: "issue_categories/new"
+    # assert_response :success
   end
 
   test "should create issue_category" do
