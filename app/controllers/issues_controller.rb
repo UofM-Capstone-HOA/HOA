@@ -34,9 +34,9 @@ class IssuesController < ApplicationController
     @issue_categories = IssueCategory.all
   end
 
-  def show_dup
-    format.js { render :coffee => "open_mod()" }
-  end
+  # def show_dup
+  #   format.js { render :coffee => "open_mod()" }
+  # end
 
   # POST /issues
   # POST /issues.json
