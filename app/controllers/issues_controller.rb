@@ -61,7 +61,7 @@ class IssuesController < ApplicationController
           
         elsif @issue.save! 
           format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
-          format.json { render :show, status: :created, location: @issue}
+          format.json { render :index, status: :created, location: @issue}
         else
           format.html { render :new }
           format.json { render json: @issue.errors, status: :unprocessable_entity }
@@ -74,8 +74,8 @@ class IssuesController < ApplicationController
   def update
     respond_to do |format|
       if @issue.update(issue_params)
-        format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
-        format.json { render :show, status: :ok, location: @issue }
+        format.html { redirect_to issues_path(), notice: 'Issue was successfully updated.' }
+        format.json { render :index, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
