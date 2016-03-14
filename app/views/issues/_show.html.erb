@@ -26,12 +26,14 @@
                 
               </div>
             </div>
+            <% if @issue_show.home_owner.present? %>
              <div class="row">
               <div class="col s12">
                 <label class="active" for="name2">Homeowner</label>
                 <p class="center-align" id="name2"><%= @issue_show.home_owner.fullname %><p>
               </div>
             </div>
+            <% end %>
             <div class="row">
               <div class="col s12">
                 <label class="active" for="issuecat2">Issue Category</label>

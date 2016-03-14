@@ -84,6 +84,6 @@ class AddressesController < ApplicationController
             :street, 
             :city, 
             :state, 
-            :home_owner)
+            :home_owner_id)
     end
 end
