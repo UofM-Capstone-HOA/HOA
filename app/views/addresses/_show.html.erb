@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @address_show.number %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @address_show.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @address_show.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @address_show.state %>
+</p>
+<% if @address_show.home_owner.present? %>
+<p>
+  <strong>Homeowner:</strong>
+  <%= @address_show.home_owner.fullname %>
+</p>
+<% end %>
+
+<div class="modal-action modal-close waves-effect waves-green btn-flat" onclick="back('#show_address', '#address_body')">
+    <span>Back</span>
+</div>
