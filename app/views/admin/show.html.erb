@@ -91,7 +91,7 @@
 <% if @issue_category_show.present? %>
         <div id="show_ic" class="modal">
           <div class="modal-content">            
-            <%= render 'issue_categories/show', id: @issue_category_show %>            
+            <%= render 'issue_categories/show', id: @issue_category_show.id %>            
           </div>
         </div>
         <script type="text/javascript">
@@ -101,7 +101,7 @@
 <% if @issue_category_edit.present? %>
         <div id="edit_ic" class="modal">
           <div class="modal-content">            
-            <%= render 'issue_categories/edit', id: @issue_category_edit %>
+            <%= render 'issue_categories/edit', id: @issue_category_edit.id %>
           </div>
         </div>
         <script type="text/javascript">

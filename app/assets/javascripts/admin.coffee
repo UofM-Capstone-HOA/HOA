@@ -11,8 +11,10 @@ close_mod = (tag) ->
 comp_ease = () ->
 	$(this).css('height', '')
 
-@back = (tag, id) ->
-	close_mod(tag)
+@back_no_mod = (id) ->
 	$(id).parent().addClass('active')
 	$(id).siblings('.collapsible-body').stop(true,false).slideDown(duration: 350, easing: "easeOutQuart", queue: false, complete: comp_ease())
-	
+
+@back = (tag, id) ->
+	close_mod(tag)
+	@back_no_mod(id)
