@@ -19,6 +19,11 @@ Rails.application.routes.draw do
 
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
   post 'admin/show_ic', to: 'admin#show_ic'
+  post 'admin/edit_ic', to: 'admin#edit_ic'
+  post 'admin/show_ho', to: 'admin#show_ho'
+  post 'admin/edit_ho', to: 'admin#edit_ho'
+  post 'admin/show_address', to: 'admin#show_address'
+  post 'admin/edit_address', to: 'admin#edit_address'
 
   resources :issues
   resources :home_owners

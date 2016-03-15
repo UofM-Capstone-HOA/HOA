@@ -24,8 +24,8 @@
                     <td><%= address.city %></td>
                     <td><%= address.state %></td>
                     <td><%= address.home_owner ? address.home_owner.fullname : ""%></td>
-                    <td><%= link_to 'Show', address %></td>
-                    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+                    <td><%= link_to 'Show', admin_show_address_path(address_show: address.id), method: :post %></td> 
+                    <td><%= link_to 'Edit', admin_edit_address_path(address_edit: address.id), method: :post %></td>
                     <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   </tr>
                 <% end %>

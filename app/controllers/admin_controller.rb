@@ -13,10 +13,41 @@ class AdminController < ApplicationController
   	
   end
 
+  # These functions control the modal creation
   def show_ic
  	show
   	@issue_category_show = IssueCategory.find(params[:issue_category_show])
   	render :show, id: current_user 
+  end
+
+  def edit_ic
+ 	show
+  	@issue_category = IssueCategory.find(params[:issue_category_edit])
+  	render :show, id: current_user 
+  end
+
+  def show_ho
+  show
+    @home_owner_show = HomeOwner.find(params[:home_owner_show])
+    render :show, id: current_user 
+  end
+
+  def edit_ho
+    show
+    @home_owner = HomeOwner.find(params[:home_owner_edit])
+    render :show, id: current_user 
+  end
+
+  def show_address
+    show
+    @address_show = Address.find(params[:address_show])
+    render :show, id: current_user 
+  end
+
+  def edit_address
+    show
+    @address = Address.find(params[:address_edit])
+    render :show, id: current_user 
   end
 
   private

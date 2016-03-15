@@ -5,10 +5,9 @@
 
 		<h1>Admin</h1>
 
-
 			<ul class="collapsible popout" data-collapsible="accordion">
 				<li>
-					<div class="collapsible-header">
+					<div id="ho_body" class="collapsible-header">
 						<p>Edit Homeowners</p>
 					</div>       
 					
@@ -17,10 +16,8 @@
 					</div>
 				
 				</li>
-
-
 				<li>
-					<div class="collapsible-header">
+					<div id="address_body" class="collapsible-header">
 						<p>Edit Adresses</p>
 					</div> 
 					
@@ -30,11 +27,11 @@
 				</li>
 
 				<li>
-					<div class="collapsible-header">
+					<div id="ic_body" class="collapsible-header">
 						<p>Edit Issue Categories</p>
 					</div> 
 
-					<div class="collapsible-body">
+					<div  class="collapsible-body">
 						<%= render 'issue_categories/index' %>
 					</div>
 				</li>
@@ -44,6 +41,53 @@
 		</div>
 	</div>
 </section>	
+
+<!-- Modals located here -->
+<!-- HO Modals -->
+<% if @home_owner_show.present? %>
+        <div id="show_ho" class="modal">
+          <div class="modal-content">            
+            <%= render 'home_owners/show', id: @home_owner_show %>            
+          </div>
+        </div>
+        <script type="text/javascript">
+          	$('#show_ho').openModal();
+        </script>
+<% end %>
+<% if @home_owner_edit.present? %>
+        <div id="edit_ho" class="modal">
+          <div class="modal-content">            
+            <%= render 'home_owners/edit', id: @home_owner_edit %>
+          </div>
+        </div>
+        <script type="text/javascript">
+          	$('#edit_ho').openModal();
+        </script>	
+<% end %>
+
+<!-- Address Modals -->
+<% if @address_show.present? %>
+        <div id="show_address" class="modal">
+          <div class="modal-content">            
+            <%= render 'addresses/show', id: @address_show %>            
+          </div>
+        </div>
+        <script type="text/javascript">
+          	$('#show_address').openModal();
+        </script>
+<% end %>
+<% if @address_edit.present? %>
+        <div id="edit_address" class="modal">
+          <div class="modal-content">            
+            <%= render 'addresses/edit', id: @address_edit %>
+          </div>
+        </div>
+        <script type="text/javascript">
+          	$('#edit_address').openModal();
+        </script>	
+<% end %>
+
+<!-- IC Modals -->
 <% if @issue_category_show.present? %>
         <div id="show_ic" class="modal">
           <div class="modal-content">            
@@ -51,6 +95,16 @@
           </div>
         </div>
         <script type="text/javascript">
-          $('#show_ic').openModal();
+          	$('#show_ic').openModal();
         </script>
-<% end %>	
+<% end %>
+<% if @issue_category_edit.present? %>
+        <div id="edit_ic" class="modal">
+          <div class="modal-content">            
+            <%= render 'issue_categories/edit', id: @issue_category_edit %>
+          </div>
+        </div>
+        <script type="text/javascript">
+          	$('#edit_ic').openModal();
+        </script>	
+<% end %>

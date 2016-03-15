@@ -17,7 +17,7 @@
               <tr>
                 <td><%= issue_category.name %></td>                
                 <td><%= link_to 'Show', admin_show_ic_path(issue_category_show: issue_category.id), method: :post %></td> 
-                <td> <a class="modal-trigger" href='#edit_ic'>Edit</a></td>
+                <td><%= link_to 'Edit', admin_edit_ic_path(issue_category_edit: issue_category.id), method: :post %></td>
                 <td><%= link_to 'Destroy', issue_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
@@ -28,6 +28,8 @@
 
   </div>
 </section>
+
+
     <div class="row">
       <div class="col s12 center-align">
         <a class="modal-trigger waves-effect waves-light btn" href='#new_ic'>
@@ -39,13 +41,6 @@
             <%= render 'issue_categories/new' %>
           </div>
         </div>
-
-        <div id="edit_ic" class="modal">
-          <div class="modal-content">            
-            <%= render 'issue_categories/edit' %>
-          </div>
-        </div>
-
       </div>
     </div>
 
