@@ -2,14 +2,14 @@
 
 one:
   id: 1
-  firstName: "Josh"
-  lastName: "Restuccio"
+  firstname: "Josh"
+  lastname: "Restuccio"
   email: "test@gmail.com"
   phone: "901-555-5555"
 
 two:
   id: 2
-  firstName: "Kevin"
-  lastName: "Townsend"
+  firstname: "Kevin"
+  lastname: "Townsend"
   email: "ktown@gmail.com"
   phone: "901-555-5555"

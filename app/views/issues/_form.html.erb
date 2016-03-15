@@ -20,20 +20,25 @@
             <% end %>
             <div class="row">
               <div class="col s12">
-                <p class="center-align"><%= @issue_date.html_safe %><p>
+                <% if @issue_date.present? %>
+                  <p class="center-align"><%= @issue_date.html_safe %><p>
+                <% end %>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                
+                <% if @addresses.present? %>
                 <%= f.collection_select(:address_id, @addresses, :id, :full_address, {prompt: "Address"}, {class: "select-two select-two-style", id: "issue_address"}) %>
                 <!-- <label for= "issue_address">Address</label> -->
+                <% end %>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
+              <% if @issue_categories.present? %>
                 <%= f.collection_select(:issue_category_id, @issue_categories, :id, :name, {prompt: "Issue Category"}, {class: "select-two select-two-style", id: "issue_cat"}) %>
                 <!-- <label for= "issue_cat">Issue Category</label> -->
+              <% end %>
               </div>
             </div>
             <div class="row">

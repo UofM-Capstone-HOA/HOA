@@ -7,7 +7,7 @@ a1:
   city: "Memphis"
   state: "TN"
   country: "USA"
-  homeOwner_id: 
+  home_owner_id: 2
 
 a2:
   id: 2
@@ -16,5 +16,14 @@ a2:
   city: "Memphis"
   state: "TN"
   country: "USA"
-  homeOwner_id: 
+  home_owner_id: 2
+
+one:
+  id: 3
+  number: 8888
+  street: "Roger Cove"
+  city: "Memphis"
+  state: "TN"
+  country: "USA"
+  home_owner_id: 1
 
