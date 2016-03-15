@@ -38,7 +38,7 @@ class IssuesControllerTest < ActionController::TestCase
 
   test "should update issue" do
     patch :update, id: @issue, issue: { date: DateTime.now, address_id: 1, user_id: 1, issue_category_id: 1 }
-    assert_redirected_to issue_path(assigns(:issue))
+    assert_redirected_to issues_path()
   end
 
   test "should destroy issue" do
