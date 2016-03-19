@@ -22,7 +22,7 @@ class Address < ActiveRecord::Base
 	end
 
   geocoded_by :full_address
-  after_validation :reverse_geocode
+  after_validation :geocode
   
 
 end

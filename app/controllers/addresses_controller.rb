@@ -24,7 +24,8 @@ class AddressesController < ApplicationController
 
   # POST /addresses
   # POST /addresses.json
-  def create
+
+  def create    
     @address = Address.new(address_params)
 
     respond_to do |format|

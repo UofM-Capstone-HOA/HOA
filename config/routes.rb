@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get 'hoaroute/index'
 
-  resources :geos
   # get 'admin/index'
 
   devise_for :users
