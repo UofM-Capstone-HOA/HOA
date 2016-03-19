@@ -61,6 +61,8 @@ gem 'geocoder'
 
 gem 'gmaps4rails'
 
+gem 'underscore-rails'
+
 
 # npt sure what this is for yet but possibly w/ carrierwave
 # gem "rmagick"

@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20160313223359) do
     t.string   "city"
     t.string   "state"
     t.string   "country",       default: "USA"
-    t.string   "postalcode"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "postalcode",    default: "38103"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "home_owner_id"
     t.float    "latitude"
     t.float    "longitude"

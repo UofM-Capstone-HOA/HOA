@@ -15,7 +15,8 @@
 #= require turbolinks
 #= require materialize-sprockets
 #= require_tree .
-
+#= require underscore
+#= require gmaps/google
 
 
 # $(document).on 'ready page:load', -> 

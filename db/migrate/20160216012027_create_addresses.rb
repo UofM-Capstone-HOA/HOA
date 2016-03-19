@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :country , default: "USA"
-      t.string :postalcode
+      t.string :postalcode, default: "38103"
       #t.references :homeOwner, index: true, foreign_key: true
 
       t.timestamps null: false
