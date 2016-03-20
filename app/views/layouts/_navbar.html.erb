@@ -34,7 +34,7 @@
 	   			<li><%=link_to 'New Issue', new_issue_url, class: "waves-effect waves-purple"%></li>
 	    		<li><%=link_to 'All Issues',issues_path(), class: "waves-effect waves-purple"%></li>
 	    		<li><%=link_to 'Admin', admin_path(current_user), class: "waves-effect waves-purple"%></li>
-	    		<li><%=link_to 'Routes', hoaroutes_path, class: "waves-effect waves-purple"%></li>	
+	    		<li><%=link_to 'Routes', hoaroutes_path, class: "waves-effect waves-purple", 'data-no-turbolink' => true%></li>	
 	    		<li><%=link_to 'Edit Profile', edit_user_registration_path(current_user), class: "waves-effect waves-purple"%></li>    	
 	    		<li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete, class: "waves-effect waves-purple"%></li>
 	 		</ul>
