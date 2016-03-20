@@ -26,7 +26,8 @@ class AddressesController < ApplicationController
 
   # POST /addresses
   # POST /addresses.json
-  def create
+
+  def create    
     @address = Address.new(address_params)
 
     respond_to do |format|
@@ -84,6 +85,10 @@ class AddressesController < ApplicationController
             :street, 
             :city, 
             :state, 
-            :home_owner_id)
+            :home_owner_id
+            :latitude,
+            :longitude,
+            :full_address
+            )
     end
 end

@@ -54,6 +54,7 @@ ad1 = Address.create!([
 ])
 
 
+
 josh.addresses.push(ad1[0])
 josh.addresses.push(ad1[1])
 stephen.addresses.push(ad1[2])
@@ -92,7 +93,8 @@ i1 = Issue.create!([
     home_owner_id: 1,
     letter_id: 1,
     user_id: 2,
-    issue_category_id: 3
+    issue_category_id: 3,
+    resolved: true
     } ,
 
     {
@@ -102,7 +104,8 @@ i1 = Issue.create!([
     home_owner_id: 2,
     letter_id: 1,
     user_id: 1,
-    issue_category_id: 2
+    issue_category_id: 2,
+    lien: true
     } ,
 
     {

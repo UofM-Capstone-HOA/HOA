@@ -1,0 +1,2 @@
+module HoaroutesHelper
+end
