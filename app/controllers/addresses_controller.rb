@@ -85,7 +85,7 @@ class AddressesController < ApplicationController
             :street, 
             :city, 
             :state, 
-            :home_owner_id
+            :home_owner_id,
             :latitude,
             :longitude,
             :full_address
