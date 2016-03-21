@@ -8,7 +8,7 @@ class AddForeignKeys < ActiveRecord::Migration
   	add_reference :issues, :issue_category, index: true
 
   	#Addresses Foreign Keys
-	add_reference :addresses, :home_owner, index: true  	
+	add_reference :addresses, :home_owner, index: true	
 
 	#Letters Foreign Keys
 	add_reference :letters, :issue, index: true

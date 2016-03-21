@@ -5,7 +5,7 @@ class HomeOwnersController < ApplicationController
   # GET /home_owners
   # GET /home_owners.json
   def index
-    @home_owners = HomeOwner.all
+    @home_owners = HomeOwner.where.not(id: 1) 
   end
 
   # GET /home_owners/1

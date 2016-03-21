@@ -50,6 +50,9 @@ class IssuesController < ApplicationController
     respond_to do |format|
         @issue.date = DateTime.now
         @issue.home_owner = @issue.address.home_owner
+        if not @issue.home_owner
+          @issue.home_owner = HomeOwner.find(1)
+        end
         @issue.user = current_user
         
         if @issue_show.present? and params[:commit] != 'Create Anyway'

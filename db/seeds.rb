@@ -7,6 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
  josh = HomeOwner.create!(
+    firstname: 'No',
+    lastname: 'Homeowner',
+    email: '',
+    phone: '',    
+    )
+
+ josh = HomeOwner.create!(
     firstname: 'Josh',
     lastname: 'Restuccio',
     email: 'jstoosh84@gmail.com',
