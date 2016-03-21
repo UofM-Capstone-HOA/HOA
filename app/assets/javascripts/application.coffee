@@ -43,7 +43,7 @@
 
 
 # Initialize jQuery
-ready = () -> 
+ready = -> 
 
 	#Navbar collapse load
 	$(".button-collapse").sideNav()
