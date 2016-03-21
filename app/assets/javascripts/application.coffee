@@ -44,7 +44,8 @@
 
 
 # Initialize jQuery
-ready = -> 
+$(document).on('ready page:change', ->
+	# ready = -> 
 
 	#Navbar collapse load
 	$(".button-collapse").sideNav()
@@ -63,11 +64,15 @@ ready = ->
 
     # dismiss the popup
 	$('.modal-trigger').leanModal({dismissible : true})
+	
+	# reintialize the button waves issue
+	Waves.displayEffect()
+	)
 
 
 
-$(document).ready(ready)
-$(document).on('page:change', ready)
+# $(document).ready(ready)
+# $(document).on('page:load page:partial-load', ready)
 
 
 
