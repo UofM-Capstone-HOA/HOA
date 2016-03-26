@@ -5,25 +5,37 @@
 
 		<h1>Admin</h1>
 
-			<ul class="collapsible popout" data-collapsible="accordion">
+			<ul class="collapsible popout center-align" data-collapsible="accordion">
 				<li>
-					<div id="ho_body" class="collapsible-header">
-						<p>Edit Homeowners</p>
+					<div id="ho_body" class="collapsible-header valign-wrapper">
+						<h4 class='valign'>Homeowners</h4>
 					</div>       
 					
 					<div class="collapsible-body">
 						<%= render 'home_owners/index' %>
-					</div>
-				
+            <div class="row">
+              <div class="col s12 center-align">
+                <a class="modal-trigger waves-effect waves-light btn" href='#new_ho'>
+                Add Home Owner
+                </a>
+              </div>
+            </div>
+          </div>
 				</li>
 				<li>
 					<div id="address_body" class="collapsible-header">
 						<p>Edit Adresses</p>
 					</div> 
-					
 					<div class="collapsible-body">
 						<%= render 'addresses/index' %>
-					</div>
+            <div class="row">
+              <div class="col s12 center-align">
+                <a class="modal-trigger waves-effect waves-light btn" href='#new_ad'>
+                New Address
+                </a>
+              </div>
+            </div>  
+          </div>
 				</li>
 
 				<li>
@@ -33,7 +45,14 @@
 
 					<div  class="collapsible-body">
 						<%= render 'issue_categories/index' %>
-					</div>
+					  <div class="row">
+              <div class="col s12 center-align">
+                <a class="modal-trigger waves-effect waves-light btn" href='#new_ic'>
+                New Issue Categories
+                </a>
+              </div>
+            </div>  
+          </div>
 				</li>
 			</ul>
 
@@ -44,6 +63,11 @@
 
 <!-- Modals located here -->
 <!-- HO Modals -->
+<div id="new_ho" class="modal">
+  <div class="modal-content">
+    <%= render 'home_owners/new' %>
+  </div>
+</div>
 <% if @home_owner_show.present? %>
         <div id="show_ho" class="modal">
           <div class="modal-content">            
@@ -66,6 +90,11 @@
 <% end %>
 
 <!-- Address Modals -->
+<div id="new_ad" class="modal">
+  <div class="modal-content">
+    <%= render 'addresses/new' %>
+  </div>
+</div>
 <% if @address_show.present? %>
         <div id="show_address" class="modal">
           <div class="modal-content">            
@@ -88,6 +117,11 @@
 <% end %>
 
 <!-- IC Modals -->
+<div id="new_ic" class="modal">
+  <div class="modal-content">
+    <%= render 'issue_categories/new' %>
+  </div>
+</div>
 <% if @issue_category_show.present? %>
         <div id="show_ic" class="modal">
           <div class="modal-content">            

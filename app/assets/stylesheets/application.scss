@@ -32,6 +32,9 @@ $primary-color: color("purple", "lighten-1") !default;
   .side-nav{
     width: 170px;
   }
+  th, td{
+    font-size: 1.3rem;
+  }
 
 }
 
@@ -39,6 +42,9 @@ $primary-color: color("purple", "lighten-1") !default;
 @media #{$medium-and-down} {
   .side-nav {
   width: 200px;
+  }
+  th, td{
+    font-size: 1.1rem;
   }
 
 }
@@ -56,7 +62,7 @@ img{
 }
 
 .img-parallax{
-  max-height: 1000px;
+  max-height: 750px;
   width: auto;
 }
 .container{

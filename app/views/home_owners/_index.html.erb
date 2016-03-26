@@ -2,9 +2,8 @@
   <div class="section">
     <div class="row">
       <div class="col s12 center-align">
-        <h5>Home Owners</h5>
 
-        <table class="responsive-table">
+        <table class="responsive-table highlight">
           <thead>
             <tr>
               <th>Firstname</th>
@@ -17,13 +16,12 @@
 
           <tbody>
             <% @home_owners.each do |home_owner| %>
-              <tr>
+              <tr class="clickable-row" data-id='#show_ho' data-link='<%= admin_show_ho_path(home_owner_show: home_owner.id) %>'>
                 <td><%= home_owner.firstname %></td>
                 <td><%= home_owner.lastname %></td>
                 <td><%= home_owner.email %></td>
                 <td><%= home_owner.phone %></td>
-                <td><%= link_to 'Show', admin_show_ho_path(home_owner_show: home_owner.id), method: :post %></td> 
-                <td><%= link_to 'Edit', admin_edit_ho_path(home_owner_edit: home_owner.id), method: :post %></td>
+                <td><%= link_to 'Edit', admin_edit_ho_path(home_owner_edit: home_owner.id) , method: :post %></td> 
                 <td><%= link_to 'Destroy', home_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
@@ -31,18 +29,4 @@
         </table>
       </div>
     </div>
-    <div class="row">
-      <div class="col s12 center-align">
-        <a class="modal-trigger waves-effect waves-light btn" href='#new_ho'>
-          Add Home Owner
-        </a>
-          
-        <div id="new_ho" class="modal">
-          <div class="modal-content">
-            <%= render 'home_owners/new' %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
