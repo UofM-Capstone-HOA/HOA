@@ -26,9 +26,7 @@ $primary-color: color("purple", "lighten-1") !default;
  	main {
 		padding-left: 170px;
 	}
-	.parallax-container {
-      height: 700px;
-  }
+
   .side-nav{
     width: 170px;
   }
@@ -41,7 +39,7 @@ $primary-color: color("purple", "lighten-1") !default;
 /* Tablet and Mobile version */
 @media #{$medium-and-down} {
   .side-nav {
-  width: 200px;
+    width: 200px;
   }
   th, td{
     font-size: 1.1rem;
@@ -49,11 +47,31 @@ $primary-color: color("purple", "lighten-1") !default;
 
 }
 
-img{
+tr{
+  cursor: pointer; 
+}
+
+.issue_pic{
     max-width:400px;
     max-height:400px;
    /* margin-right: 10px;
     margin-top: 30px;*/
+}
+
+.parallax-container {
+  min-height: 700px;
+  height: auto;
+}
+
+.parallax {
+  img {
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 900px;
+    position: absolute;
+    transform: translateX(-50%);
+  }
 }
 
 #admin_show{
@@ -61,10 +79,13 @@ img{
   padding-left: 10px;
 }
 
-.img-parallax{
-  max-height: 750px;
-  width: auto;
-}
 .container{
     width: 95%;
   }
+  a:hover{
+  border:none;
+  outline:none;
+  text-decoration: none !important;
+  text-decoration-color: none !important;
+  color:inherit;
+}

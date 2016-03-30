@@ -26,10 +26,40 @@ comp_ease = () ->
 	document.querySelector('[id^=materialize-lean-overlay]').remove()
 	@back_no_mod(id)
 
-$(document).on('ready', ->
+bound = false
+$(document).on('ready page:update', ->
 	$(".clickable-row").click( ->
-		# $.post(url: $(this).data("link"))
-		window.document.location = $(this).data("link")
-		# open_mod($(this).data("id"))
-		)
+		unless bound
+			
+			data = {show_id: $(this).data("id")}
+			$.get(url: $(this).data("link"), data, (response) ->
+				$('body').html(response)
+				)
+			bound = true
+
+	)
 )
+
+
+
+
+
+# unused code
+
+# $('#yeild_area').html('<% render :show %>')
+
+# open_mod( "#"+$(this).data("id"))
+# $.ajax(
+# 	type: "POST",
+#   home_owner_show: $(this).data("id")
+#   url: $(this).data("link"),
+
+# 	success: (response) ->
+# 	$(body).html(response)
+#   		return false
+#     		# error:(data) ->
+#       # 		return false
+#   	)
+# par = $(this).data("id")
+# 		url = $(this).data("link") 
+# 		window.location = url+'?home_owner_show=' + par

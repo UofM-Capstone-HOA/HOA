@@ -14,19 +14,26 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'static_pages#welcome', as: :unauthenticated_root
+      root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
 
   # Temporary home
   get 'home', to: 'static_pages#home', as: 'home'
 
+
+
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
-  post 'admin/show_ic', to: 'admin#show_ic'
+
+  # issues page and modals
+  # get 'issues/:id/show', to: 'issues#show', as: 'issues'
+  
+  # admin page and modals
+  get 'admin/issue_category', to: 'admin#show_ic', as: 'admin/issue_category'
   post 'admin/edit_ic', to: 'admin#edit_ic'
-  post 'admin/show_ho', to: 'admin#show_ho'
+  get 'admin/homeowner', to: 'admin#show_ho', as: 'admin/homeowner'
   post 'admin/edit_ho', to: 'admin#edit_ho'
-  post 'admin/show_address', to: 'admin#show_address'
+  get 'admin/address', to: 'admin#show_address', as: 'admin/address'
   post 'admin/edit_address', to: 'admin#edit_address'
 
   resources :issues

@@ -1,7 +1,8 @@
+<section id="all_issues" class="container">
+  <div class="section">
+<h4>Issues</h4>
 
-<h1>Listing Issues</h1>
-
-<table>
+<table class="responsive-table highlight">
   <thead>
     <tr>
         <th data-field="date">Created</th>
@@ -15,7 +16,7 @@
 
   <tbody>
     <% @issues.each do |issue| %>
-      <tr >
+      <tr class="clickable-row" data-id='<%= issue.id %>' data-link='issues'>
       <td><%= issue.date.strftime('%B %e, %Y') %></td>
         <td><%= issue.issue_status %></td>
         <td><%= issue.address.full_address %></td>
@@ -28,5 +29,17 @@
   </tbody>
 </table>
 
-<br>
+</div>
+</section>
 
+<!-- modal show section -->
+<% if  @issue_show.present? %>
+        <div id="show_i" class="modal">
+          <div class="modal-content">            
+            <%= render 'issues/show', id: @issue_show.id %>            
+          </div>
+        </div>
+        <script type="text/javascript">
+            $('#show_i').openModal();
+        </script>
+<% end %>

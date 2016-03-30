@@ -16,7 +16,7 @@
 
           <tbody>
             <% @home_owners.each do |home_owner| %>
-              <tr class="clickable-row" data-id='#show_ho' data-link='<%= admin_show_ho_path(home_owner_show: home_owner.id) %>'>
+              <tr class="clickable-row" data-id='<%= home_owner.id %>' data-link='homeowner'>
                 <td><%= home_owner.firstname %></td>
                 <td><%= home_owner.lastname %></td>
                 <td><%= home_owner.email %></td>

@@ -12,7 +12,9 @@ class IssuesController < ApplicationController
   # GET /issues/1
   # GET /issues/1.json
   def show
+    index
     @issue_show = Issue.find(params[:id])
+    render :index
 
   end
 

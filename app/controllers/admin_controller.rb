@@ -16,7 +16,7 @@ class AdminController < ApplicationController
   # These functions control the modal creation
   def show_ic
  	  show
-  	@issue_category_show = IssueCategory.find(params[:issue_category_show])
+  	@issue_category_show = IssueCategory.find(params[:show_id])
   	render :show, id: current_user 
   end
 
@@ -30,11 +30,14 @@ class AdminController < ApplicationController
 
   def show_ho
     show
-    @home_owner_show = HomeOwner.find(params[:home_owner_show])
+    @home_owner_show = HomeOwner.find(params[:show_id])
     render :show, id: current_user 
   end
 
   def edit_ho
+    
+    puts params.inspect
+
     show
 
     # this is not the best way to solve the edit  problem, but it will work for now
@@ -44,7 +47,7 @@ class AdminController < ApplicationController
 
   def show_address
     show
-    @address_show = Address.find(params[:address_show])
+    @address_show = Address.find(params[:show_id])
     render :show, id: current_user 
   end
 
