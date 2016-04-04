@@ -32,6 +32,16 @@ class HoaroutesController < ApplicationController
   	end
   end
 
+  def getroute
+    send_file(Rails.root.join('app' , 'assets', 'kml', 'current_route.xml'))
+    # send_file "app/assets/kml/current_route.xml"
+  end
 
+  def postroute
+    # send_file(Rails.root.join('app' , 'assets', 'kml', 'current_route.xml'))
+    # send_file "app/assets/kml/current_route.xml"
+
+    puts params.inspect
+  end
   
 end
