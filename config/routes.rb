@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   get 'admin/address', to: 'admin#show_address', as: 'admin/address'
   post 'admin/edit_address', to: 'admin#edit_address'
 
+  post 'issues/mylocation', to: 'issues#mylocation'
+
   resources :issues
   resources :home_owners
   resources :addresses
