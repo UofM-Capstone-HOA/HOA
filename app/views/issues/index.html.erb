@@ -5,6 +5,7 @@
 <table class="responsive-table highlight">
   <thead>
     <tr>
+        <th colspan="1"> </th>
         <th data-field="date">Created</th>
         <th data-field="status">Status</th>
         <th data-field="address">Address</th>
@@ -16,8 +17,10 @@
 
   <tbody>
     <% @issues.each do |issue| %>
-      <tr class="clickable-row" data-id='<%= issue.id %>' data-link='issues'>
-      <td><%= issue.date.strftime('%B %e, %Y') %></td>
+      <tr >
+        <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{resolved: true}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' } %></td>
+        <td><%= issue.date.strftime('%B %e, %Y') %></td>
+
         <td><%= issue.issue_status %></td>
         <td><%= issue.address.full_address %></td>
         <td><%= issue.issue_category.name %></td>
