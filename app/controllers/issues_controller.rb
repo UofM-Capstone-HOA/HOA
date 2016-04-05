@@ -74,10 +74,20 @@ class IssuesController < ApplicationController
     end
   end
 
+  # def close
+  #   @issue = Issue.find([:id])
+  #   @issue.resolved = params[:resolved]
+  #   @issue.save!
+  #   renser :index
+  # end
+
   # PATCH/PUT /issues/1
   # PATCH/PUT /issues/1.json
   def update
+    # params[:issue] = @issue
     respond_to do |format|
+      puts params.inspect 
+      puts @issue.id
       if @issue.update(issue_params)
         format.html { redirect_to issues_path(), notice: 'Issue was successfully updated.' }
         format.json { render :index, status: :ok }
