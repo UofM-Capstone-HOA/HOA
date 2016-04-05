@@ -22,10 +22,12 @@ class IssuesController < ApplicationController
   def mylocation
     @lng_lat = [params[:lng].to_f, params[:lat].to_f]
     #@place = Place.create(location:{type:"Point", coordinates:@lng_lat}, height:@alt)
-
+    
     render json: {
-      adds: Address.near([params[:lat].to_f, params[:lng].to_f], 50)
+      adds: Address.near([params[:lat].to_f, params[:lng].to_f], 5)
     }
+
+
   end
 
   # GET /issues/new
@@ -34,10 +36,13 @@ class IssuesController < ApplicationController
     @issue_date = DateTime.now.strftime('%B %e, %Y')
 
     @lng_lat = [ 0.0, 0.0]
-
+    @adds = Address.all
     # current go for the address
     @addresses = Address.all
     @issue_categories = IssueCategory.all
+
+    @latitude = params[:latitude]
+    @longitude = params[:longitude]
 
   end
 

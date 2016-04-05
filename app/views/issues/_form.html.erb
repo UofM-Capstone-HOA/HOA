@@ -26,15 +26,13 @@
               </div>
             </div>
             <div class="row">
-              <%=f.label :lat %>
-                <%=f.label :lng %>
               <div class="input-field col s12">
                 <% if @addresses.present? %>
                 <%=hidden_field_tag :lat %>
                 <%=hidden_field_tag :lng %>
 
 
-                <%= f.collection_select(:address_id, @addresses.near(@lng_lat[0], @lng_lat[1], 50) , :id, :full_address, {prompt: "Address"}, {class: "select-two select-two-style", id: "issue_address"}) %>
+                <%= f.collection_select(:address_id, @adds, :id, :full_address, {prompt: "Address"}, {class: "select-two select-two-style", id: "issue_address_select"}) %>
                 <!-- <label for= "issue_address">Address</label> -->
 
                 <% end %>
