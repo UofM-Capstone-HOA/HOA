@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   get 'admin/address', to: 'admin#show_address', as: 'admin/address'
   post 'admin/edit_address', to: 'admin#edit_address'
 
+  get 'hoaroutes/getkml', to: 'hoaroutes#getkml'
+  get 'hoaroutes/getroute', to: 'hoaroutes#getroute', as: 'route'
+  post 'hoaroutes/postroute', to: 'hoaroutes#postroute'
+
   resources :issues
   resources :home_owners
   resources :addresses

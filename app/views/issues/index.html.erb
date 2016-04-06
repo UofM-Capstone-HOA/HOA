@@ -1,38 +1,41 @@
-<section id="all_issues" class="container">
-  <div class="section">
+
+<script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script> 
+<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
+
+<section id='issue-index-page'>
 <h4>Issues</h4>
+  <div class="container">
+        <div id="all-add-maps" style='width: auto; height:500px;'></div>
 
-<table class="responsive-table highlight">
-  <thead>
-    <tr>
-        <th colspan="1"> </th>
-        <th data-field="date">Created</th>
-        <th data-field="status">Status</th>
-        <th data-field="address">Address</th>
-        <th data-field="category">Category</th>
-        <th data-field="note">Note</th>
-        <th data-field="note">Show/delete</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+          <th data-field="date">Created</th>
+          <th data-field="status">Status</th>
+          <th data-field="address">Address</th>
+          <th data-field="category">Category</th>
+          <th data-field="note">Note</th>
+          <th data-field="note">Show/delete</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @issues.each do |issue| %>
-      <tr >
+
+    <tbody>
+      <% @issues.each do |issue| %>
+        <tr >
         <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{resolved: true}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' } %></td>
         <td><%= issue.date.strftime('%B %e, %Y') %></td>
-
-        <td><%= issue.issue_status %></td>
-        <td><%= issue.address.full_address %></td>
-        <td><%= issue.issue_category.name %></td>
-        <td><%= issue.note %></td>
-        <td><%= link_to 'Show', issue %></td>
-        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-</div>
+          <td><%= issue.issue_status %></td>
+          <td><%= issue.address.full_address %></td>
+          <td><%= issue.issue_category.name %></td>
+          <td><%= issue.note %></td>
+          <td><%= link_to 'Show', issue %></td>
+          <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 </section>
 
 <!-- modal show section -->

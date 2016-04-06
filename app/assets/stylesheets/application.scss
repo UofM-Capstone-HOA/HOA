@@ -33,7 +33,9 @@ $primary-color: color("purple", "lighten-1") !default;
   th, td{
     font-size: 1.3rem;
   }
-
+  .map-responsive{
+    min-height: 800px;
+  }
 }
 
 /* Tablet and Mobile version */
@@ -89,3 +91,12 @@ tr{
   text-decoration-color: none !important;
   color:inherit;
 }
+.img-parallax{
+  max-height: 700px;
+  width: auto;
+}
+.map-responsive{
+   min-height: 500px;
+  }
+
+
