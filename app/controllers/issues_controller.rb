@@ -13,8 +13,6 @@ class IssuesController < ApplicationController
       marker.infowindow issue.address.full_address + "<br />" + issue.note +
       "<br />" + "Status: " + issue.issue_status
 
-
-
       if issue.lien == false && issue.resolved == false
           marker.picture({
         :url => "/assets/IssueOpen.gif",
@@ -53,7 +51,12 @@ class IssuesController < ApplicationController
     @issue_date = DateTime.now.strftime('%B %e, %Y')
 
     # current go for the address
-    @addresses = Address.all
+
+    if params[:lat] and params[:long]
+      @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 5)
+    else
+      @addresses = Address.all
+    end
     @issue_categories = IssueCategory.all
   end
 

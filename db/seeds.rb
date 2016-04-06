@@ -57,7 +57,28 @@ ad1 = Address.create!([
     {number: 65,
     street: 'Riverwalk Pl',
     city: 'Memphis',
+    state: 'TN'},
+
+    {number: 3615,
+    street: 'Norriswood Ave',
+    city: 'Memphis',
+    state: 'TN'},
+
+    {number: 416,
+    street: 'Life Sciences Bldg',
+    city: 'Memphis',
+    state: 'TN'},
+
+    {number: 217,
+    street: 'FedEx Institute of Technology',
+    city: 'Memphis',
+    state: 'TN'},
+
+    {number: 303,
+    street: 'Dunn Hall',
+    city: 'Memphis',
     state: 'TN'}
+
 ])
 
 

@@ -18,8 +18,6 @@ resizeMap = () ->
     map.setCenter(center)
 
 
-
-
 $(document).on('page:change ', ->
 
 	return unless $("#issue-index-page").length > 0
