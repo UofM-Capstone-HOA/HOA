@@ -14,33 +14,9 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require materialize-sprockets
-#= require_tree .
 #= require underscore
 #= require gmaps/google
-
-
-# $(document).on 'ready page:load', -> 
-
-# 	#Navbar collapse load
-# 	$(".button-collapse").sideNav()
-
-# 	#Parallax scrolling load
-# 	$('.parallax').parallax()
-
-# 	# Scrollspy scrolling tracking
-# 	$('.scrollspy').scrollSpy()
-
-# 	# to make matrailize's select work
-# 	$('select').material_select()
-
-# 	# collapsable
-# 	$('.collapsible').collapsible({accordion : false})
-
-#     # dismiss the popup
-# 	$('.modal-trigger').leanModal({dismissible : true})
-
-
-
+#= require_tree .
 
 
 # Initialize jQuery
