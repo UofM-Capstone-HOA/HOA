@@ -45,6 +45,8 @@ $(document).on('ready page:change', ->
 				}
 			# console.log(polylines[0]['serviceObject'].getPath())
 			polylines[0]['serviceObject'].getPath().push(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude))
+			handler.bounds.extendWith(polylines)
+			handler.fitMapToBounds()
 			$.post(url: 'hoaroutes/postroute', data, (response) ->
 				response
 			)
