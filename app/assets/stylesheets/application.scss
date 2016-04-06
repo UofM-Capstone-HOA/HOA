@@ -32,9 +32,10 @@ $primary-color: color("purple", "lighten-1") !default;
   .side-nav{
     width: 170px;
   }
-  .map-responsive-container{
-    padding-top: 20px;
+  .map-responsive{
+    min-height: 800px;
   }
+
 
 }
 
@@ -64,6 +65,9 @@ img{
 }
 .container{
     width: 95%;
+  }
+.map-responsive{
+   min-height: 500px;
   }
 
 

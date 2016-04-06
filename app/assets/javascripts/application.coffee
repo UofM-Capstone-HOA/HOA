@@ -43,7 +43,10 @@ $(document).on('ready page:change', ->
 	
 	# reintialize the button waves issue
 	Waves.displayEffect()
+
 	)
+
+	
 
 
 

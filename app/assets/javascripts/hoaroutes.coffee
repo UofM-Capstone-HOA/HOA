@@ -13,8 +13,14 @@ buildmap = (handler,route) ->
   		handler.fitMapToBounds()
   	)
 
+@stopWatch = () ->
+	navigator.geolocation.clearWatch(cur_location)
 
-$(document).on('ready ["#route-page"]', ->
+
+# $("#route-page").ready( ->
+$(document).on('ready page:change', ->
+	
+	return unless $(".hoaroutes").length > 0
 
 	handler = Gmaps.build('Google')
 	polylines = null
@@ -26,7 +32,7 @@ $(document).on('ready ["#route-page"]', ->
   						{strokeColor: "#cc00cc", strokeWeight: 4}
   					)
   		
-  					console.log(polylines)
+  					# console.log(polylines)
   					handler.bounds.extendWith(polylines)
   					handler.fitMapToBounds()
   				)
@@ -43,10 +49,12 @@ $(document).on('ready ["#route-page"]', ->
 				response
 			)
 		()->
-			document.getElementById("button-area").innerHTML += 'Error'
 		{ enableHighAccuracy: true, timeout: 100, maximumAge: 0 }
 	)
 
-
+	$(document).on 'page:before-change', ->
+    	navigator.geolocation.clearWatch(cur_location)
 )
+
+
 
