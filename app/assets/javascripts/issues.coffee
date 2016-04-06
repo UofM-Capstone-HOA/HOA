@@ -18,27 +18,29 @@ resizeMap = () ->
     map.setCenter(center)
 
 
-$(document).on('page:change ', ->
-
-	return unless $("#issue-index-page").length > 0
-
-	
-
+# prams is not being carried through the entire function
+@build_map_all = (prams) ->
+	# console.log(prams)
+	# p = [prams]
+	# console.log(p)
 	handlerAll = Gmaps.build('Google')
 	handlerAll.buildMap({ internal: {id: 'all-add-maps'} }, () ->
-  		markers = handlerAll.addMarkers('<%=raw @hash.to_json %>')
-
+  		console.log(prams)
+  		markers = handlerAll.addMarkers(prams)
   		handlerAll.bounds.extendWith(markers)
   		handlerAll.fitMapToBounds()
-
   		)
+	console.log(prams)
 	
+	# handlerAll.resetBounds()
 
-	$("#all-add-maps").hide()
+	# $("#all-add-maps").hide()
+
+
+$(document).on('ready page:load', ->
+
+	return unless $(".issues.index").length > 0
+
+	
 	)
-	
-
-
-
-
 

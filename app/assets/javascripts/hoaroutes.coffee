@@ -2,16 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-buildmap = (handler,route) ->
+# buildmap = (handler,route) ->
 	
-	# document.getElementById("button-area").innerHTML += xml.responseXML.getElementsByTagName("coordinates")[0].nodeValue
-	handler.buildMap({ internal: {id: 'geolocation'} }, () ->
-  		polylines = handler.addPolylines(route, 
-  			{strokeColor: "#cc00cc", strokeWeight: 4}
-  			)
-  		handler.bounds.extendWith(polylines)
-  		handler.fitMapToBounds()
-  	)
+# 	# document.getElementById("button-area").innerHTML += xml.responseXML.getElementsByTagName("coordinates")[0].nodeValue
+# 	handler.buildMap({ internal: {id: 'geolocation'} }, () ->
+#   		polylines = handler.addPolylines(route, 
+#   			{strokeColor: "#cc00cc", strokeWeight: 4}
+#   			)
+#   		handler.bounds.extendWith(polylines)
+#   		handler.fitMapToBounds()
+#   	)
 
 @stopWatch = () ->
 	navigator.geolocation.clearWatch(cur_location)
