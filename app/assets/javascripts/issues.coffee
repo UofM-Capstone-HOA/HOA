@@ -24,12 +24,13 @@ resizeMap = () ->
 	# p = [prams]
 	# console.log(p)
 	handlerAll = Gmaps.build('Google')
+	console.log(prams)
 	handlerAll.buildMap({ internal: {id: 'all-add-maps'} }, () ->
   		console.log(prams)
   		markers = handlerAll.addMarkers(prams)
-  		handlerAll.bounds.extendWith(markers)
-  		handlerAll.fitMapToBounds()
-  		)
+  		# handlerAll.bounds.extendWith(markers)
+  		# handlerAll.fitMapToBounds()
+  	)
 	console.log(prams)
 	
 	# handlerAll.resetBounds()
