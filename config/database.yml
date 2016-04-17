@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: HOA_production
-  username: HOA
-  password: <%= ENV['HOA_DATABASE_PASSWORD'] %>
+  username: hoaadmin
+  password: password
