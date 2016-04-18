@@ -18,7 +18,7 @@
 
 
 # $("#route-page").ready( ->
-$(document).on('ready page:change', ->
+$(document).on('turbolinks:load', ->
 	
 	return unless $(".hoaroutes").length > 0
 

@@ -27,7 +27,7 @@ comp_ease = () ->
 	@back_no_mod(id)
 
 bound = false
-$(document).on('ready page:update', ->
+$(document).on('turbolinks:load', ->
 	$(".clickable-row").click( ->
 		unless bound
 			

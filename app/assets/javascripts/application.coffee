@@ -18,25 +18,10 @@
 #= require gmaps/google
 #= require_tree .
 
-@link_to_new_issue = () ->
-	
-	cur_location = navigator.geolocation.getCurrentPosition( 
-		(pos) ->
-			$.get(
-				url: 'issues/new',
-				{
-				long: pos.coords.longitude, 
-				lat: pos.coords.latitude
-				},
-				(response) ->
-					document.open()
-					document.write(response)
-					document.close()
-			)
-	)
+
 
 # Initialize jQuery
-$(document).on('ready page:change', ->
+$(document).on('turbolinks:load', ->
 	# ready = -> 
 
 	#Navbar collapse load
@@ -59,6 +44,22 @@ $(document).on('ready page:change', ->
 	
 	# reintialize the button waves issue
 	Waves.displayEffect()
+
+	@link_to_new_issue = () ->
+		cur_location = navigator.geolocation.getCurrentPosition( 
+			(pos) ->
+				$.get(
+					url: 'issues/new',
+					{
+					long: pos.coords.longitude, 
+					lat: pos.coords.latitude
+					},
+					(response) ->
+						document.open()
+						document.write(response)
+						document.close()
+				)
+		)
 
 	)
 
