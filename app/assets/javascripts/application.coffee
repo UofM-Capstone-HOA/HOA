@@ -49,7 +49,7 @@ $(document).on('turbolinks:load', ->
 		cur_location = navigator.geolocation.getCurrentPosition( 
 			(pos) ->
 				$.get(
-					url: 'issues/new',
+					url: '/issues/new',
 					{
 					long: pos.coords.longitude, 
 					lat: pos.coords.latitude
