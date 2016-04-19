@@ -26,19 +26,28 @@ comp_ease = () ->
 	document.querySelector('[id^=materialize-lean-overlay]').remove()
 	@back_no_mod(id)
 
-bound = false
-$(document).on('turbolinks:load', ->
-	$(".clickable-row").click( ->
-		unless bound
-			
-			data = {show_id: $(this).data("id")}
-			$.get(url: $(this).data("link"), data, (response) ->
-				$('body').html(response)
-				)
-			bound = true
 
-	)
-)
+$( 'li' ).on( 'click', '.clickable-row', function( event ) ->
+	data = {show_id: $(this).data("id")}
+	
+	$.get(url: $(this).data("link"), data, (response) ->
+		$('body').html(response)
+		)
+
+
+# bound = false
+# $(document).on('ready page:change', ->
+# 	$(".clickable-row").click( ->
+# 		unless bound
+			
+# 			data = {show_id: $(this).data("id")}
+# 			$.get(url: $(this).data("link"), data, (response) ->
+# 				$('body').html(response)
+# 				)
+# 			bound = true
+
+# 	)
+# )
 
 
 
