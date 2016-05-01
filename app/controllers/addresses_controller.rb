@@ -73,6 +73,12 @@ class AddressesController < ApplicationController
     # end
   end
 
+  def import
+    Address.import(params[:file])
+    #redirect_to icd10_index_path, notice: "Codes were added Successfully"    
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_address
@@ -91,4 +97,7 @@ class AddressesController < ApplicationController
             :full_address
             )
     end
+
+  
+
 end

@@ -47,6 +47,10 @@ Rails.application.routes.draw do
   resources :admin
   resources :hoaroutes
 
+  resources :addresses do
+    collection { post :import}
+  end
+
  #root to: 'application#index'
 
 
