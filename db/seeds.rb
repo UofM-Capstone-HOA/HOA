@@ -28,72 +28,76 @@
     phone: '901-555-5555'
     )
 
-ad1 = Address.create!([
-    {number: 859,
-    street: 'Harbor Bend Rd',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 1400,
-    street: 'East Island Pl',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 1033,
-    street: 'East Island Pl',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 1274,
-    street: 'Fleets Dr',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 1445,
-    street: 'Island Town Cv',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 65,
-    street: 'Riverwalk Pl',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 3615,
-    street: 'Norriswood Ave',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 416,
-    street: 'Life Sciences Bldg',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 217,
-    street: 'FedEx Institute of Technology',
-    city: 'Memphis',
-    state: 'TN'},
-
-    {number: 303,
-    street: 'Dunn Hall',
-    city: 'Memphis',
-    state: 'TN'}
-
-])
+#import all addresses
+Address.import('./misc/HOA_masterlist.ods')
 
 
+# ad1 = Address.create!([
+#     {number: 859,
+#     street: 'Harbor Bend Rd',
+#     city: 'Memphis',
+#     state: 'TN'},
 
-josh.addresses.push(ad1[0])
-josh.addresses.push(ad1[1])
-stephen.addresses.push(ad1[2])
-stephen.addresses.push(ad1[3])
-stephen.addresses.push(ad1[4])
-josh.addresses.push(ad1[5])
-josh.save!
-stephen.save!
+#     {number: 1400,
+#     street: 'East Island Pl',
+#     city: 'Memphis',
+#     state: 'TN'},
 
-stephen.addresses.push(ad1[3])
-stephen.save!
+#     {number: 1033,
+#     street: 'East Island Pl',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 1274,
+#     street: 'Fleets Dr',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 1445,
+#     street: 'Island Town Cv',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 65,
+#     street: 'Riverwalk Pl',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 3615,
+#     street: 'Norriswood Ave',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 416,
+#     street: 'Life Sciences Bldg',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 217,
+#     street: 'FedEx Institute of Technology',
+#     city: 'Memphis',
+#     state: 'TN'},
+
+#     {number: 303,
+#     street: 'Dunn Hall',
+#     city: 'Memphis',
+#     state: 'TN'}
+
+# ])
+
+
+
+#josh.addresses.push(ad1[0])
+#josh.addresses.push(ad1[1])
+#stephen.addresses.push(ad1[2])
+#stephen.addresses.push(ad1[3])
+#stephen.addresses.push(ad1[4])
+#josh.addresses.push(ad1[5])
+#josh.save!
+#stephen.save!
+
+#stephen.addresses.push(ad1[3])
+#stephen.save!
 
 is1 = IssueCategory.create!(
     [{name: 'Lawn'},

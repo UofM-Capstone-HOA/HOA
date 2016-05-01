@@ -21,6 +21,20 @@ class Address < ActiveRecord::Base
 		"#{number} #{street} #{city}, #{state} "
 	end
 
+  def self.import(file)
+    spreadsheet = Roo::Spreadsheet.open(file, extension: :ods)
+    header = spreadsheet.row(1)     
+    ActiveRecord::Base.transaction do
+      spreadsheet.each(number: 'number', street: 'street', city: "city", state: "state") do |hash|        
+        if hash[:number] == "number"
+          #puts hash.inspect
+        else
+          Address.create!( number: hash[:number].to_s, street: hash[:street], city: hash[:city], state: hash[:state] )   
+        end 
+      end
+    end
+  end
+
   geocoded_by :full_address
   after_validation :geocode
   
