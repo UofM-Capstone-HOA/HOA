@@ -29,7 +29,9 @@ class Address < ActiveRecord::Base
         if hash[:number] == "number"
           #puts hash.inspect
         else
-          Address.create!( number: hash[:number].to_s, street: hash[:street], city: hash[:city], state: hash[:state] )   
+          begin      
+          Address.create!( number: hash[:number].to_s, street: hash[:street], city: hash[:city], state: hash[:state] )                     
+          end          
         end 
       end
     end
