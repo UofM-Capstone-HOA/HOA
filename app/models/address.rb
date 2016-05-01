@@ -31,6 +31,7 @@ class Address < ActiveRecord::Base
         else
           begin      
           Address.create!( number: hash[:number].to_s, street: hash[:street], city: hash[:city], state: hash[:state] )                     
+          #sleep 0.25 #added to prevent query limit
           end          
         end 
       end
