@@ -21,6 +21,11 @@ class Address < ActiveRecord::Base
 		"#{number} #{street} #{city}, #{state} "
 	end
 
+  def short_address
+    "#{number} #{street} "
+  end
+
+
   def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file, extension: :ods)
     header = spreadsheet.row(1)     

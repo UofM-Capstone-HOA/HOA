@@ -26,10 +26,10 @@
     <tbody>
       <% @issues.each do |issue| %>
         <tr >
-        <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{resolved: true}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' }, class:'waves-effect waves-purple btn-flat' %></td>
+        <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{issue_status_category_id: 5}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' }, class:'waves-effect waves-purple btn-flat' %></td>
         <td><%= issue.date.strftime('%B %e, %Y') %></td>
-          <td><%= issue.issue_status %></td>
-          <td><%= issue.address.full_address %></td>
+          <td><%= issue.issue_status_category.name %></td>
+          <td><%= issue.address.short_address %></td>
           <td><%= issue.issue_category.name %></td>
           <td><%= issue.note %></td>
           <td><%= link_to 'Show', issue %></td>

@@ -3,7 +3,7 @@ class AddForeignKeys < ActiveRecord::Migration
 	#Issues Foreign Keys
 	add_reference :issues, :address, index: true  	
   	add_reference :issues, :home_owner, index: true
-  	add_reference :issues, :letter, index: true
+  	#add_reference :issues, :letter, index: true
   	add_reference :issues, :user, index: true
   	add_reference :issues, :issue_category, index: true
 
