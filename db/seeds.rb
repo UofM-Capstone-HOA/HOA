@@ -29,7 +29,7 @@
     )
 
 #import all addresses
-#Address.import('./misc/HOA_masterlist.ods')
+Address.import('./misc/HOA_masterlist.ods')
 
 
 # ad1 = Address.create!([
@@ -106,7 +106,7 @@ is1 = IssueCategory.create!(
     {name: 'Trash'}
     ])
 
-IssueStatus.create!(
+IssueStatusCategory.create!(
     [{name: 'Letter 1'},
     {name: 'Letter 2'},
     {name: 'Letter 3'},
@@ -132,10 +132,10 @@ i1 = Issue.create!([
     issue_status_category_id: 1,
     note: 'Rotting wood on exterior of home. West side.',
     address_id: 2,
-    home_owner_id: 1,
-    letter_id: 1,
+    home_owner_id: 1,    
     user_id: 2,
-    issue_category_id: 3    
+    issue_category_id: 3,
+    issue_status_category_id: 1
     } ,
 
     {
@@ -143,10 +143,10 @@ i1 = Issue.create!([
     issue_status_category_id: 2,
     note: 'Peeling paint along the trim. West side.',
     address_id: 1,
-    home_owner_id: 2,
-    letter_id: 1,
+    home_owner_id: 2,    
     user_id: 1,
-    issue_category_id: 2
+    issue_category_id: 2,
+    issue_status_category_id: 2
     } ,
 
     {
@@ -155,9 +155,9 @@ i1 = Issue.create!([
     note: 'Trash overflowing.',
     address_id: 4,
     home_owner_id: 2,
-    letter_id: 1,
     user_id: 1,
-    issue_category_id: 4
+    issue_category_id: 4,
+    issue_status_category_id: 5
     } 
 
     ])
