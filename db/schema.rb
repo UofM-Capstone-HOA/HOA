@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405172603) do
+ActiveRecord::Schema.define(version: 20160502060429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,25 +57,27 @@ ActiveRecord::Schema.define(version: 20160405172603) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "issue_statuses", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "issues", force: :cascade do |t|
     t.datetime "date"
-    t.boolean  "lien",              default: false
-    t.boolean  "resolved",          default: false
     t.text     "note"
     t.string   "picture"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "address_id"
     t.integer  "home_owner_id"
-    t.integer  "letter_id"
     t.integer  "user_id"
     t.integer  "issue_category_id"
+    t.integer  "issue_status_id"
   end
 
   add_index "issues", ["address_id"], name: "index_issues_on_address_id", using: :btree
   add_index "issues", ["home_owner_id"], name: "index_issues_on_home_owner_id", using: :btree
   add_index "issues", ["issue_category_id"], name: "index_issues_on_issue_category_id", using: :btree
-  add_index "issues", ["letter_id"], name: "index_issues_on_letter_id", using: :btree
+  add_index "issues", ["issue_status_id"], name: "index_issues_on_issue_status_id", using: :btree
   add_index "issues", ["user_id"], name: "index_issues_on_user_id", using: :btree
 
   create_table "letters", force: :cascade do |t|
@@ -107,4 +109,5 @@ ActiveRecord::Schema.define(version: 20160405172603) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "issues", "issue_statuses"
 end

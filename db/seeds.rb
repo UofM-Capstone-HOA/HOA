@@ -29,7 +29,7 @@
     )
 
 #import all addresses
-Address.import('./misc/HOA_masterlist.ods')
+#Address.import('./misc/HOA_masterlist.ods')
 
 
 # ad1 = Address.create!([
@@ -106,6 +106,15 @@ is1 = IssueCategory.create!(
     {name: 'Trash'}
     ])
 
+IssueStatus.create!(
+    [{name: 'Letter 1'},
+    {name: 'Letter 2'},
+    {name: 'Letter 3'},
+    {name: 'Fine'},
+    {name: 'Resolved'}
+    ])
+
+
 kevin = User.create!(email: "kevin@memphis.edu", password: "password",
                      password_confirmation: "password", isadmin: 1)
 
@@ -120,28 +129,29 @@ nonAdmin = User.create!(email: "nonAdmin@gmail.com", password: "password",
 i1 = Issue.create!([
     {
     date: DateTime.parse("26/2/2016 8:00"),
+    issue_status_category_id: 1,
     note: 'Rotting wood on exterior of home. West side.',
     address_id: 2,
     home_owner_id: 1,
     letter_id: 1,
     user_id: 2,
-    issue_category_id: 3,
-    resolved: true
+    issue_category_id: 3    
     } ,
 
     {
     date: DateTime.parse("25/2/2016 10:00"),
+    issue_status_category_id: 2,
     note: 'Peeling paint along the trim. West side.',
     address_id: 1,
     home_owner_id: 2,
     letter_id: 1,
     user_id: 1,
-    issue_category_id: 2,
-    lien: true
+    issue_category_id: 2
     } ,
 
     {
     date: DateTime.parse("21/2/2016 7:30"),
+    issue_status_category_id: 5,
     note: 'Trash overflowing.',
     address_id: 4,
     home_owner_id: 2,
