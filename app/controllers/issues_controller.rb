@@ -11,15 +11,15 @@ class IssuesController < ApplicationController
       marker.lat issue.address.latitude
       marker.lng issue.address.longitude
       marker.infowindow issue.address.full_address + "<br />" + issue.note +
-      "<br />" + "Status: " + issue.issue_status
+      "<br />" + "Status: " + issue.issue_status_category_id.to_s
 
-      if issue.lien == false && issue.resolved == false
+      if issue.issue_status_category_id == 1
           marker.picture({
         :url => "/assets/IssueOpen.gif",
         :width => 32,
         :height => 32
         })
-      elsif issue.resolved == true
+      elsif issue.issue_status_category_id == 2
           marker.picture({
         :url => "/assets/IssueResolved.gif",
         :width  => 32,
@@ -58,6 +58,7 @@ class IssuesController < ApplicationController
       @addresses = Address.all
     end
     @issue_categories = IssueCategory.all
+    @issue_status_categories = IssueStatusCategory.all
   end
 
   # GET /issues/1/edit
@@ -66,6 +67,7 @@ class IssuesController < ApplicationController
     @issue_date = DateTime.now.strftime('%B %e, %Y')
     @addresses = Address.all
     @issue_categories = IssueCategory.all
+    @issue_status_categories = IssueStatusCategory.all
   end
 
   # def show_dup
@@ -79,7 +81,7 @@ class IssuesController < ApplicationController
 
     # store a possible duplicate
     # Currently not checking a date range but any possible
-    @issue_show = Issue.where(['address_id = (?) AND issue_category_id = (?) AND resolved = false', @issue.address_id, @issue.issue_category_id]).last
+    @issue_show = Issue.where(['address_id = (?) AND issue_category_id = (?)', @issue.address_id, @issue.issue_category_id]).last
     
     respond_to do |format|
         @issue.date = DateTime.now
@@ -93,15 +95,16 @@ class IssuesController < ApplicationController
           
           @addresses = Address.all
           @issue_categories = IssueCategory.all
+          @issue_status_categories = IssueStatusCategory.all
           @issue_date = DateTime.now.strftime('%B %e, %Y')
           format.html{ render :new }
           
         elsif @issue.save! 
           format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
-          format.json { render :index, status: :created, location: @issue}
+          format.json { render :index, issue_status_category_id: :created, location: @issue}
         else
           format.html { render :new }
-          format.json { render json: @issue.errors, status: :unprocessable_entity }
+          format.json { render json: @issue.errors, issue_status_category_id: :unprocessable_entity }
         end
     end
   end
@@ -122,10 +125,10 @@ class IssuesController < ApplicationController
       puts @issue.id
       if @issue.update(issue_params)
         format.html { redirect_to issues_path(), notice: 'Issue was successfully updated.' }
-        format.json { render :index, status: :ok }
+        format.json { render :index, issue_status_category_id: :ok }
       else
         format.html { render :edit }
-        format.json { render json: @issue.errors, status: :unprocessable_entity }
+        format.json { render json: @issue.errors, issue_status_category_id: :unprocessable_entity }
       end
     end
   end
@@ -152,12 +155,11 @@ class IssuesController < ApplicationController
       params.require(:issue).permit(
       :date,
       :note,
-      :picture,
-      :lien,
-      :resolved,
+      :picture,            
       :address_id,
       :home_owner_id, 
-      :issue_category_id
+      :issue_category_id,
+      :issue_status_category_id
     )
     end
 
