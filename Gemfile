@@ -65,6 +65,8 @@ gem 'underscore-rails'
 
 gem 'nokogiri'
 
+#install roo gem
+gem 'roo', '2.3.2'
 
 # npt sure what this is for yet but possibly w/ carrierwave
 # gem "rmagick"
