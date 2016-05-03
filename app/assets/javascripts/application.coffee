@@ -24,11 +24,12 @@
 		(pos) ->
 			# newurl = document.URL.match(/\//) + "/issues/new"
 			newurl2 = window.location.origin + '/issues/new'
-			newurl = window.location.protocol + '//' + window.location.host + '/issues/new'
-			consol.log(newurl2)
+			newurl = window.location.protocol + '//' + window.location.hostname + '/issues/new'
+			console.log(newurl)
+			console.log(newurl2)
 			debugger
 			$.get(
-				consol.log(newurl2)
+				console.log(newurl2)
 				url: newurl2
 				# url: '../issues/new',
 				{
@@ -65,8 +66,6 @@ $(document).on 'click', '.new-issue-link', ->
 					document.write(response)
 					document.close()
 			
-		
-	
 
 $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 	data = {show_id: $(this).data("id")}
