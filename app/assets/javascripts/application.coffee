@@ -23,12 +23,13 @@
 	cur_location = navigator.geolocation.getCurrentPosition( 
 		(pos) ->
 			# newurl = document.URL.match(/\//) + "/issues/new"
+			newurl2 = window.location.origin + '/issues/new'
 			newurl = window.location.protocol + '//' + window.location.host + '/issues/new'
-			consol.log(newurl)
+			consol.log(newurl2)
 			debugger
 			$.get(
-				consol.log(newurl)
-				url: newurl
+				consol.log(newurl2)
+				url: newurl2
 				# url: '../issues/new',
 				{
 				long: pos.coords.longitude, 
