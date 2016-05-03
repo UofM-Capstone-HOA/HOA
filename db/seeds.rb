@@ -28,6 +28,9 @@
     phone: '901-555-5555'
     )
 
+#import all homeowners
+HomeOwner.import('./misc/HomeOwners.xlsx')
+
 #import all addresses
 Address.import('./misc/HOA_masterlist.ods')
 
