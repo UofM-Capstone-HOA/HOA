@@ -16,6 +16,7 @@
         <th data-field="date">Created</th>
         <th data-field="status">Status</th>
         <th data-field="address">Address</th>
+        <th data-field="address">Home Owner</th>
         <th data-field="category">Category</th>
         <th data-field="note">Note</th>
         <th data-field="note">Show/delete</th>
@@ -27,10 +28,11 @@
       <% @issues.each do |issue| %>
         <tr >
         <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{issue_status_category_id: 5}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' }, class:'waves-effect waves-purple btn-flat' %></td>
-        <td><%= issue.date.strftime('%B %e, %Y') %></td>
-
+          <td><%= issue.date.strftime('%m/%d/%Y') %></td>
           <td><%= issue.issue_status_category.name %></td>
           <td><%= issue.address.short_address %></td>
+          <td><%= issue.address.home_owner.lastname %></td>
+
           <td><%= issue.issue_category.name %></td>
           <td><%= issue.note %></td>
           <td><%= link_to 'Show', issue %></td>
