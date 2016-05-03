@@ -27,12 +27,7 @@ comp_ease = () ->
 	@back_no_mod(id)
 
 
-$( 'li' ).on( 'click', '.clickable-row', function( event ) ->
-	data = {show_id: $(this).data("id")}
-	
-	$.get(url: $(this).data("link"), data, (response) ->
-		$('body').html(response)
-		)
+
 
 
 # bound = false
@@ -47,7 +42,7 @@ $( 'li' ).on( 'click', '.clickable-row', function( event ) ->
 # 			bound = true
 
 # 	)
-# )
+	# )
 
 
 

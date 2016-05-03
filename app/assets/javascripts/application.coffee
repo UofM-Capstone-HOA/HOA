@@ -23,7 +23,10 @@
 		(pos) ->
 			# newurl = document.URL.match(/\//) + "/issues/new"
 			newurl = window.location.protocol + '//' + window.location.host + '/issues/new'
+			consol.log(newurl)
+			debugger
 			$.get(
+				consol.log(newurl)
 				url: newurl
 				# url: '../issues/new',
 				{
@@ -38,27 +41,38 @@
 	)
 
 
-# $('body').on 'click', '.new-issue', ->
-# 	cur_location = navigator.geolocation.getCurrentPosition( 
-# 		console.log('hi1')
-# 		(pos) ->
-# 			# newurl = document.URL.match(/\//) + "/issues/new"
-# 			newurl = window.location.host + '/issues/new'
-# 			console.log('hi2')
-# 			console.log(newurl)
-# 			$.get(
-# 				url: newurl
-# 				# url: '../issues/new',
-# 				{
-# 				long: pos.coords.longitude, 
-# 				lat: pos.coords.latitude
-# 				},
-# 				(response) ->
-# 					document.open()
-# 					document.write(response)
-# 					document.close()
-# 			)
-# 	)
+$('li').on('click', '.new-issue' , ( event ) ->
+	cur_location = navigator.geolocation.getCurrentPosition( 
+		console.log('hi1')
+		(pos) ->
+			# newurl = document.URL.match(/\//) + "/issues/new"
+			newurl = window.location.host + '/issues/new'
+			console.log('hi2')
+			console.log(newurl)
+			$.get(
+				url: newurl
+				# url: '../issues/new',
+				{
+				long: pos.coords.longitude, 
+				lat: pos.coords.latitude
+				},
+				(response) ->
+					document.open()
+					document.write(response)
+					document.close()
+		)
+		(err) ->
+			console.log(err)
+		)
+	)
+$( 'li' ).on( 'click', '.clickable-row', ( event ) ->
+	data = {show_id: $(this).data("id")}
+	
+	$.get(url: $(this).data("link"), data, (response) ->
+		$('body').html(response)
+		)
+	)
+
 
 
 # Initialize jQuery
