@@ -40,18 +40,22 @@ class HoaroutesController < ApplicationController
   end
 
   def postroute
+    params[:hoaroute][:user_id] = current_user.id
     coord = Hoaroute.new(hoaroute_params)
     coord.save!
-    coord = Hoaroute.all.select(:lat, :long)
-    coord = coord.as_json 
+    coord = Hoaroute.where(['user_id = (?)', current_user]).select(:lat, :long)
+    # coord = Hoaroute.all.select(:lat, :long)
+    coord = coord.as_json  
     coord = coord.map{ |i| {"lng": i["long"], "lat": i["lat"]}}
+
     render json: [coord]
   end
 
   def getkml
     # .where(['user_id = (?)', nil])
-    coord = Hoaroute.all.select(:lat, :long)
-    coord = coord.as_json 
+    coord = Hoaroute.where(['user_id = (?)', current_user]).select(:lat, :long)
+    # coord = Hoaroute.all.select(:lat, :long)
+    coord = coord.as_json
     coord = coord.map{ |i| {"lng": i["long"], "lat": i["lat"]}}
     render json: [coord]
   end
@@ -60,7 +64,7 @@ class HoaroutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hoaroute_params
-      params.require(:hoaroute).permit(:user, 
+      params.require(:hoaroute).permit(:user_id, 
             :lat, 
             :long
             )
