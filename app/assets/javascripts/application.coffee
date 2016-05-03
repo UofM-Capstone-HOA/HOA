@@ -18,12 +18,14 @@
 #= require gmaps/google
 #= require_tree .
 
-
 @link_to_new_issue = () ->
 	cur_location = navigator.geolocation.getCurrentPosition( 
 		(pos) ->
+			# newurl = document.URL.match(/\//) + "/issues/new"
+			newurl = window.location.protocol + '//' + window.location.host + '/issues/new'
 			$.get(
-				url: '/issues/new',
+				url: newurl
+				# url: '../issues/new',
 				{
 				long: pos.coords.longitude, 
 				lat: pos.coords.latitude
@@ -36,8 +38,31 @@
 	)
 
 
+# $('body').on 'click', '.new-issue', ->
+# 	cur_location = navigator.geolocation.getCurrentPosition( 
+# 		console.log('hi1')
+# 		(pos) ->
+# 			# newurl = document.URL.match(/\//) + "/issues/new"
+# 			newurl = window.location.host + '/issues/new'
+# 			console.log('hi2')
+# 			console.log(newurl)
+# 			$.get(
+# 				url: newurl
+# 				# url: '../issues/new',
+# 				{
+# 				long: pos.coords.longitude, 
+# 				lat: pos.coords.latitude
+# 				},
+# 				(response) ->
+# 					document.open()
+# 					document.write(response)
+# 					document.close()
+# 			)
+# 	)
+
+
 # Initialize jQuery
-$(document).on('ready page:change', ->
+$(document).on('ready', ->
 	# ready = -> 
 
 	#Navbar collapse load
