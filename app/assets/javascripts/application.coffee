@@ -30,8 +30,9 @@
 			debugger
 			$.get(
 				console.log(newurl2)
-				url: newurl2
+				url: newurl2,
 				# url: '../issues/new',
+				dataType: 'html',
 				{
 				long: pos.coords.longitude, 
 				lat: pos.coords.latitude
