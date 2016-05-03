@@ -78,7 +78,7 @@ $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 
 
 # Initialize jQuery
-$(document).on( 'ready page:change', ->
+$(document).on( 'ready page:change turbolinks:load', ->
 	# ready = -> 
 
 	#Navbar collapse load
