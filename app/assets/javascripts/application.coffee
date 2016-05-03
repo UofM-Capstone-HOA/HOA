@@ -41,7 +41,7 @@
 	)
 
 
-$('li').on('click', '.new-issue' , ( event ) ->
+$('li').on('click', '.new-issue' ,  ->
 	cur_location = navigator.geolocation.getCurrentPosition( 
 		console.log('hi1')
 		(pos) ->
