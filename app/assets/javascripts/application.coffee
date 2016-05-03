@@ -60,9 +60,7 @@ $('li').on('click', '.new-issue' , ( event ) ->
 					document.open()
 					document.write(response)
 					document.close()
-		)
-		(err) ->
-			console.log(err)
+			)
 		)
 	)
 $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
