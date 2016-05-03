@@ -11,6 +11,7 @@
 # about supported directives.
 #
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require turbolinks
 #= require materialize-sprockets
@@ -41,15 +42,17 @@
 	)
 
 
-$('li').on('click', '.new-issue' ,  ->
-	cur_location = navigator.geolocation.getCurrentPosition( 
+$(document).on 'click', '.new-issue-link', ->
+	# e.preventDefault()
+	debugger
+	cur_location = navigator.geolocation.getCurrentPosition
 		console.log('hi1')
 		(pos) ->
 			# newurl = document.URL.match(/\//) + "/issues/new"
 			newurl = window.location.host + '/issues/new'
 			console.log('hi2')
 			console.log(newurl)
-			$.get(
+			$.get
 				url: newurl
 				# url: '../issues/new',
 				{
@@ -60,9 +63,10 @@ $('li').on('click', '.new-issue' ,  ->
 					document.open()
 					document.write(response)
 					document.close()
-			)
-		)
-	)
+			
+		
+	
+
 $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 	data = {show_id: $(this).data("id")}
 	
@@ -74,7 +78,7 @@ $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 
 
 # Initialize jQuery
-$(document).on('ready', ->
+$(document).ready( ->
 	# ready = -> 
 
 	#Navbar collapse load
@@ -98,6 +102,31 @@ $(document).on('ready', ->
 	# reintialize the button waves issue
 	Waves.displayEffect()
 
+	
+	# $('body').on( 'click', '.new-issue', (e)->
+	# 	e.preventDefault()
+	# 	debugger
+	# 	cur_location = navigator.geolocation.getCurrentPosition( 
+	# 		console.log('hi1')
+	# 		(pos) ->
+	# 			# newurl = document.URL.match(/\//) + "/issues/new"
+	# 			newurl = window.location.host + '/issues/new'
+	# 			console.log('hi2')
+	# 			console.log(newurl)
+	# 			$.get(
+	# 				url: newurl
+	# 				# url: '../issues/new',
+	# 				{
+	# 				long: pos.coords.longitude, 
+	# 				lat: pos.coords.latitude
+	# 				},
+	# 				(response) ->
+	# 					document.open()
+	# 					document.write(response)
+	# 					document.close()
+	# 			)
+	# 		)
+	# 	)
 	)
 
 	
