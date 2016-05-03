@@ -20,8 +20,6 @@
       	<% if user_signed_in? %>
 			<ul class="side-nav fixed hide-on-med-and-down">
 				<li><a href="#!" class="brand-logo"> <img src= "/assets/harbor_logo.jpg" alt="harbortown logo" class="circle responsive-img"> </a></li>
-	    		
-	    		<!-- <li><a id='new-issue' class= "waves-effect waves-purple" onclick="link_to_new_issue()">New Issue</a></li> -->
 	    		<li><a class="new-issue waves-effect waves-purple">New Issue</a></li>
 	    		<li><%=link_to 'All Issues',issues_path(), class: "waves-effect waves-purple"%></li>
 	    		<% if current_user.isadmin? %>
@@ -35,8 +33,6 @@
 	   			<li><a href="#!" class="brand-logo"> <img src= "/assets/harbor_logo.jpg" alt="harbortown logo" class="circle responsive-img"> </a></li>
 
 	   			<li><a class="new-issue waves-effect waves-purple">New Issue</a></li>
-	   			<!-- <li><a class= "waves-effect waves-purple" onclick="link_to_new_issue()">New Issue</a></li> -->
-	   			<!-- <li><a class="new-issue waves-effect waves-purple">New Issue</a></li> -->
 	    		<li><%=link_to 'All Issues',issues_path(), class: "waves-effect waves-purple"%></li>
 	    		<li><%=link_to 'Admin', admin_path(current_user), class: "waves-effect waves-purple"%></li>
 	    		<li><%=link_to 'Routes', hoaroutes_path, class: "waves-effect waves-purple", 'data-no-turbolink' => true%></li>	
