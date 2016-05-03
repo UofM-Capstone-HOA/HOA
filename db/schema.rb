@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160502202645) do
     t.string   "postalcode",    default: "38103"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "home_owner_id"
+    t.integer  "home_owner_id", default: 1
     t.float    "latitude"
     t.float    "longitude"
   end
