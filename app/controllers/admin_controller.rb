@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 	before_action :is_user_admin 
 
   def show
-  	@home_owners = HomeOwner.where.not(id: 1) 
+    @home_owners = HomeOwner.where.not(id: 1) 
   	@addresses = Address.all
   	@issue_categories = IssueCategory.all
 

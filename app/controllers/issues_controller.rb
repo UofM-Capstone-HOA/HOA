@@ -42,7 +42,6 @@ class IssuesController < ApplicationController
     index
     @issue_show = Issue.find(params[:id])
     render :index
-
   end
 
   # GET /issues/new

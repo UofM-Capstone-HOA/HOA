@@ -38,15 +38,16 @@
 				lat: pos.coords.latitude
 				},
 				(response) ->
-					document.open()
+					document.open("text/html", "replace")
 					document.write(response)
 					document.close()
 			)
 	)
+	return false
 
 
-$(document).on 'click', '.new-issue-link', ->
-	# e.preventDefault()
+$(document).on 'click', '.new-issue-link', (event) ->
+	event.preventDefault()
 	debugger
 	cur_location = navigator.geolocation.getCurrentPosition
 		console.log('hi1')
@@ -63,12 +64,17 @@ $(document).on 'click', '.new-issue-link', ->
 				lat: pos.coords.latitude
 				},
 				(response) ->
-					document.open()
-					document.write(response)
-					document.close()
+					# window.location.href = newurl
+					$('body').html(response)
+					# document.open()
+					# document.write(response)
+					# document.close()
+
+	return false
 			
 
 $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
+	event.preventDefault()
 	data = {show_id: $(this).data("id")}
 	
 	$.get(url: $(this).data("link"), data, (response) ->
@@ -79,7 +85,7 @@ $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 
 
 # Initialize jQuery
-$(document).on( 'ready page:change turbolinks:load', ->
+$(document).on('turbolinks:load', () ->
 	# ready = -> 
 
 	#Navbar collapse load

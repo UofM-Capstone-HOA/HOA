@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   
   # admin page and modals
   get 'admin/issue_category', to: 'admin#show_ic', as: 'admin/issue_category'
-  post 'admin/edit_ic', to: 'admin#edit_ic'
+  post 'admin/edit_ic', to: 'admin#edit_ic' 
   get 'admin/homeowner', to: 'admin#show_ho', as: 'admin/homeowner'
   post 'admin/edit_ho', to: 'admin#edit_ho'
   get 'admin/address', to: 'admin#show_address', as: 'admin/address'
@@ -39,6 +39,8 @@ Rails.application.routes.draw do
   get 'hoaroutes/getkml', to: 'hoaroutes#getkml'
   get 'hoaroutes/getroute', to: 'hoaroutes#getroute', as: 'route'
   post 'hoaroutes/postroute', to: 'hoaroutes#postroute'
+
+  get '*a/issues/new', to: 'issues#new', as: 'issues/new'
 
   resources :issues
   resources :home_owners
