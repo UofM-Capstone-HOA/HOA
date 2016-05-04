@@ -42,7 +42,11 @@ class IssuesController < ApplicationController
     index
     @issue_show = Issue.find(params[:id])
     render :index
+  end
 
+  def letter
+    puts params
+    @issue_letter = Issue.find(params[:format])    
   end
 
   # GET /issues/new
@@ -53,7 +57,7 @@ class IssuesController < ApplicationController
     # current go for the address
 
     if params[:lat] and params[:long]
-      @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 5)
+      @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 50.0)
     else
       @addresses = Address.all
     end

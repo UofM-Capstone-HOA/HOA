@@ -37,6 +37,7 @@
           <td><%= issue.note %></td>
           <td><%= link_to 'Show', issue %></td>
           <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+          <td><%= link_to 'Letter', letter_path(issue) %></td>
         </tr>
       <% end %>
     </tbody>

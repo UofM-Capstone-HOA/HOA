@@ -1,0 +1,16 @@
+
+
+<div class="container">
+	<p>Dear Mr./Mrs./Ms <%=@issue_letter.home_owner.lastname%>,</p>
+	<p>&nbsp;</p>
+	<p>We are sending you this letter to notify you of the following issues:</p>
+	<%=@issue_letter.note%>	
+	<br />
+	<br />
+	<p>Address: <%=@issue_letter.address.full_address%></p>
+	
+	<p>Please correct these&nbsp;infractions.</p>
+	<p>&nbsp;</p>
+	<p>Thanks</p>
+	<p>~Harber Town HOA</p>
+</div>
