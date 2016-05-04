@@ -3,8 +3,8 @@ class AdminController < ApplicationController
 	before_action :is_user_admin 
 
   def show
-    @home_owners = HomeOwner.where.not(id: 1) 
-  	@addresses = Address.all
+    @home_owners = HomeOwner.where.not(id: 1).order( 'lastname ASC' )
+  	@addresses = Address.all.order('number ASC' )
   	@issue_categories = IssueCategory.all
 
   	@home_owner = HomeOwner.new
