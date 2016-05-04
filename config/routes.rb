@@ -20,13 +20,12 @@ Rails.application.routes.draw do
 
   # Temporary home
   get 'home', to: 'static_pages#home', as: 'home'
-
-
-
   get 'welcome', to: 'static_pages#welcome', as: 'welcome'
 
   # issues page and modals
   # get 'issues/:id/show', to: 'issues#show', as: 'issues'
+
+  get 'issues/map', to: 'issues#map', as: 'map'
   
   # admin page and modals
   get 'admin/issue_category', to: 'admin#show_ic', as: 'admin/issue_category'
