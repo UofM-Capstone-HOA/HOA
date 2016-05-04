@@ -30,7 +30,7 @@ $primary-color: color("purple", "lighten-1") !default;
     width: 170px;
   }
   th, td{
-    font-size: 1rem !important;
+    font-size: 0rem !important;
   }
   .map-responsive{
     min-height: 800px;
@@ -43,7 +43,7 @@ $primary-color: color("purple", "lighten-1") !default;
     width: 200px;
   }
   th, td{
-    font-size: 1rem !important;
+    font-size: 0rem !important;
   }
   .mobile-menu-area{
     padding-bottom: 20px;
