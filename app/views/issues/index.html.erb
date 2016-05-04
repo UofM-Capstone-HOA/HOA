@@ -12,8 +12,7 @@
   <table id='all-issues' class='responsive-table highlight'>
     <thead>
       <tr>
-        <th><%= check_box_tag "select-all-issues", "All Issues", false, onclick: 'selectAll("#select-all-issues", "#all-issues")' %>
-                <%= label_tag "select-all-issues", "", class: 'black-text'  %></th>
+      <th></th>
         <th data-field="date">Created</th>
         <th data-field="status">Status</th>
         <th data-field="address">Address</th>
@@ -37,12 +36,13 @@
           <td><%= issue.address.home_owner.lastname %></td>
           <td><%= issue.issue_category.name %></td>
           <td><%= issue.note %></td>
-          <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{issue_status_category_id: 5}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' }, class:'waves-effect waves-purple btn-flat' %></td>
+          <td><%= button_to 'Close Issue', issue_path(id: issue.id, params: {issue:{issue_status_category_id: 5}}), method: :put, data: {confirm: 'This will resolve the issue. Are you sure?' }, class:'waves-effect waves-purple' %></td>
           <td><%= link_to 'Show', issue %>|<%= link_to 'Edit', edit_issue_path(issue) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  
   </div>
 </section>
 

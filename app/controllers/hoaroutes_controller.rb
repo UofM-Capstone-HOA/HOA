@@ -60,6 +60,12 @@ class HoaroutesController < ApplicationController
     render json: [coord]
   end
 
+  def createroute
+    puts params
+    # coord = Address.where(['user_id = (?)', current_user]).select(:lat, :long)
+
+  end
+
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.

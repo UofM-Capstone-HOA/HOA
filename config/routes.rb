@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get 'hoaroutes/getkml', to: 'hoaroutes#getkml'
   get 'hoaroutes/getroute', to: 'hoaroutes#getroute', as: 'route'
   post 'hoaroutes/postroute', to: 'hoaroutes#postroute'
+  get '*a/createroute', to: 'hoaroutes#createroute', as: 'createroute'
 
   get '*a/issues/new', to: 'issues#new', as: 'issues/new'
 
