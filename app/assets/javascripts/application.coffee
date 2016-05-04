@@ -82,6 +82,12 @@ $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 		)
 	)
 
+@selectAll = (id, divid) ->
+
+	if $(id).is(':checked')
+    	$(divid).find("input:checkbox").prop("checked", true)                   
+	else
+  		$(divid).find("input:checkbox").prop("checked", false) 
 
 
 # Initialize jQuery

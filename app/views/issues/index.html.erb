@@ -9,10 +9,11 @@
   <!-- expandable map area not 100% -->
   <!-- <div id="all-add-maps" style='width: auto; height:500px;'></div> -->
  <!--  <div><a class='waves-effect waves-purple btn-flat' onclick='expand()'>Show Map</div> -->
-  <table class='responsive-table highlight'>
+  <table id='all-issues' class='responsive-table highlight'>
     <thead>
       <tr>
-        <th></th>
+        <th><%= check_box_tag "select-all-issues", "All Issues", false, onclick: 'selectAll("#select-all-issues", "#all-issues")' %>
+                <%= label_tag "select-all-issues", "All Issues", class: 'black-text'  %></th>>
         <th data-field="date">Created</th>
         <th data-field="status">Status</th>
         <th data-field="address">Address</th>
