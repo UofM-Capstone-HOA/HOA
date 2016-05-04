@@ -57,7 +57,9 @@ class IssuesController < ApplicationController
     # current go for the address
 
     if params[:lat] and params[:long]
-      @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 50.0)
+      # 35.171963, -90.051121
+      # @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 50.0)
+      @addresses = Address.near([ 35.171963, -90.051121], 0.05)
     else
       @addresses = Address.all
     end
@@ -164,7 +166,7 @@ class IssuesController < ApplicationController
       marker.lat issue.address.latitude
       marker.lng issue.address.longitude
       marker.infowindow issue.address.full_address + "<br />" + issue.note +
-      "<br />" + "Status: " + issue.issue_status_category_id.to_s
+      "<br />" + "Status: " + issue.issue_status_category_id.name.to_s
 
       if issue.issue_status_category_id == 1
           marker.picture({
