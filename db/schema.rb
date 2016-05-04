@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502202645) do
+ActiveRecord::Schema.define(version: 20160504121303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20160502202645) do
     t.integer  "user_id"
     t.integer  "issue_category_id"
     t.integer  "issue_status_category_id"
+    t.json     "pictures"
   end
 
   add_index "issues", ["address_id"], name: "index_issues_on_address_id", using: :btree

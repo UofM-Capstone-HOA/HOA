@@ -164,7 +164,7 @@ class IssuesController < ApplicationController
       params.require(:issue).permit(
       :date,
       :note,
-      :picture,            
+      {pictures: []},            
       :address_id,
       :home_owner_id, 
       :issue_category_id,

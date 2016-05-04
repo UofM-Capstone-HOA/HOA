@@ -58,7 +58,7 @@
                 <input class="col s8 file-path validate center-align" type="text" accept="image/*"/>
                 <div class="col s4 btn waves-effect waves-light">
                   <span>Add Picture</span>
-                  <%= f.file_field :picture, id: "issue_picture" %>
+                  <%= f.file_field :pictures, multiple: true, id: "issue_picture" %>
                 </div>
               </div>
             </div>
