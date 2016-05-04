@@ -29,9 +29,9 @@ $primary-color: color("purple", "lighten-1") !default;
   .side-nav{
     width: 170px;
   }
-  /*th, td{
-    font-size: 1rem;
-  }*/
+  th, td{
+    font-size: 1rem !important;
+  }
   .map-responsive{
     min-height: 800px;
   }
@@ -42,9 +42,9 @@ $primary-color: color("purple", "lighten-1") !default;
   .side-nav {
     width: 200px;
   }
-  /*th, td{
-    font-size: 1rem;
-  }*/
+  th, td{
+    font-size: 1rem !important;
+  }
   .mobile-menu-area{
     padding-bottom: 20px;
     margin-bottom: 20px;
