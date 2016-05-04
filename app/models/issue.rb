@@ -12,7 +12,7 @@ class Issue < ActiveRecord::Base
     validates :note, length: { in: 0..500}
 
   # for carrierwave
-  mount_uploader :picture, ImageUploader
+  mount_uploaders :pictures, ImageUploader
 
   # def get_address
   # 	Address.find(self.addressId)

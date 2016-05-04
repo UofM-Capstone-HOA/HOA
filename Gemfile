@@ -54,7 +54,7 @@ gem 'devise'
 gem 'materialize-sass'
 
 # Image uploader
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # For GPS data
 gem 'geocoder'
