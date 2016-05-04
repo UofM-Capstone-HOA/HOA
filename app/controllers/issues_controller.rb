@@ -59,7 +59,7 @@ class IssuesController < ApplicationController
     if params[:lat] and params[:long]
       # 35.171963, -90.051121
       # @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 50.0)
-      @addresses = Address.near([ 35.171963, -90.051121], 0.1)
+      @addresses = Address.near([ ('35.171963').to_f, ('-90.051121').to_f], 0.1)
     else
       @addresses = Address.all
     end
