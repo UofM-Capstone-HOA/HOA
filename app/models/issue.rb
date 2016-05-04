@@ -5,7 +5,7 @@ class Issue < ActiveRecord::Base
   	belongs_to :letter
   	belongs_to :user
   	belongs_to :issue_category #, class_name: "IssueCategory", foreign_key: "issue_category_id"
-    has_one :issue_status_category
+    belongs_to :issue_status_category
 
     validates :issue_status_category, presence: :true
   	validates :issue_category, presence: true
