@@ -1,3 +1,9 @@
+@selectAll = (id, divid) ->
+	if $(id).is(':checked')
+    	$(divid).find("input:checkbox").prop("checked", true)                   
+	else
+  		$(divid).find("input:checkbox").prop("checked", false) 
+
 
 open_mod = () ->
 	$('#check_issue').openModal()
@@ -42,10 +48,10 @@ resizeMap = () ->
 	# $("#all-add-maps").hide()
 
 
-$(document).on('ready page:load', ->
+# $(document).on('ready page:load', ->
 
-	return unless $(".issues.index").length > 0
+# 	return unless $(".issues.index").length > 0
 
 	
-	)
+# 	)
 

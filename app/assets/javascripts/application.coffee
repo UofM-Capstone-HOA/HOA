@@ -11,7 +11,6 @@
 # about supported directives.
 #
 #= require jquery
-#= require jquery.turbolinks
 #= require jquery_ujs
 #= require turbolinks
 #= require materialize-sprockets
@@ -82,12 +81,12 @@ $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 		)
 	)
 
-@selectAll = (id, divid) ->
-
-	if $(id).is(':checked')
-    	$(divid).find("input:checkbox").prop("checked", true)                   
-	else
-  		$(divid).find("input:checkbox").prop("checked", false) 
+# $( 'th' ).on 'click', '#select-all-issues', ->
+# 	# event.preventDefault()
+# 	if $(this).is(':checked')
+#     	$(document).find("input:checkbox").prop("checked", true)                   
+# 	else
+#   		$(document).find("input:checkbox").prop("checked", false) 
 
 
 # Initialize jQuery
