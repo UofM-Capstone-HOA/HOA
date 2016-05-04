@@ -166,7 +166,7 @@ class IssuesController < ApplicationController
       marker.lat issue.address.latitude
       marker.lng issue.address.longitude
       marker.infowindow issue.address.full_address + "<br />" + issue.note +
-      "<br />" + "Status: " + issue.issue_status_category_id.name.to_s
+      "<br />" + "Status: " + issue.issue_status_category.name.to_s
 
       if issue.issue_status_category_id == 1
           marker.picture({
