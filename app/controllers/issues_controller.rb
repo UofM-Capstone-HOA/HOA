@@ -98,12 +98,22 @@ class IssuesController < ApplicationController
           @issue_date = DateTime.now.strftime('%B %e, %Y')
           format.html{ render :new }
           
-        elsif @issue.save! 
+        elsif @issue.save 
           format.html { redirect_to issues_path(), notice: 'Issue was successfully created.' }
           format.json { render :index, issue_status_category_id: :created, location: @issue}
         else
+          @issue = Issue.new
+          @issue_date = DateTime.now.strftime('%B %e, %Y')
+          if params[:lat] and params[:long]
+            @addresses = Address.near([params[:lat].to_f, params[:long].to_f], 5)
+          else
+            @addresses = Address.all
+          end
+          @issue_categories = IssueCategory.all
+          @issue_status_categories = IssueStatusCategory.all
+          flash[:alert] = "Please fill out the entire form."
           format.html { render :new }
-          format.json { render json: @issue.errors, issue_status_category_id: :unprocessable_entity }
+          # format.json { render json: @issue.errors, issue_status_category_id: :unprocessable_entity }
         end
     end
   end
