@@ -20,7 +20,6 @@
 $primary-color: color("purple", "lighten-1") !default;
 
 
-
 /* Destop only version */
 @media #{$large-and-up} {
  	main {
@@ -30,9 +29,9 @@ $primary-color: color("purple", "lighten-1") !default;
   .side-nav{
     width: 170px;
   }
-  th, td{
-    font-size: 1.1rem;
-  }
+  /*th, td{
+    font-size: 1rem;
+  }*/
   .map-responsive{
     min-height: 800px;
   }
@@ -43,8 +42,12 @@ $primary-color: color("purple", "lighten-1") !default;
   .side-nav {
     width: 200px;
   }
-  th, td{
-    font-size: 1.05rem;
+  /*th, td{
+    font-size: 1rem;
+  }*/
+  .mobile-menu-area{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
 }
@@ -106,6 +109,9 @@ tr{
   top: 10px; 
   right: 10px; 
   z-index: 99; 
+}
+.white-text{
+  color: #fff;
 }
 
 

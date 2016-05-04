@@ -7,6 +7,7 @@ class Issue < ActiveRecord::Base
   	belongs_to :issue_category #, class_name: "IssueCategory", foreign_key: "issue_category_id"
     belongs_to :issue_status_category
 
+    validates :issue_status_category, presence: :true
   	validates :issue_category, presence: true
     validates :date, :address_id, :user_id, :issue_category_id, :home_owner, presence: true
     validates :note, length: { in: 0..500}

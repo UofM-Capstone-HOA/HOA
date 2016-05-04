@@ -88,9 +88,6 @@ $( 'li' ).on( 'click', '.clickable-row', ( event ) ->
 $(document).on('turbolinks:load', () ->
 	# ready = -> 
 
-	#Navbar collapse load
-	$(".button-collapse").sideNav()
-
 	#Parallax scrolling load
 	$('.parallax').parallax()
 
@@ -109,31 +106,12 @@ $(document).on('turbolinks:load', () ->
 	# reintialize the button waves issue
 	Waves.displayEffect()
 
-	
-	# $('body').on( 'click', '.new-issue', (e)->
-	# 	e.preventDefault()
-	# 	debugger
-	# 	cur_location = navigator.geolocation.getCurrentPosition( 
-	# 		console.log('hi1')
-	# 		(pos) ->
-	# 			# newurl = document.URL.match(/\//) + "/issues/new"
-	# 			newurl = window.location.host + '/issues/new'
-	# 			console.log('hi2')
-	# 			console.log(newurl)
-	# 			$.get(
-	# 				url: newurl
-	# 				# url: '../issues/new',
-	# 				{
-	# 				long: pos.coords.longitude, 
-	# 				lat: pos.coords.latitude
-	# 				},
-	# 				(response) ->
-	# 					document.open()
-	# 					document.write(response)
-	# 					document.close()
-	# 			)
-	# 		)
-	# 	)
+	$('.button-collapse').sideNav(
+		{
+      	menuWidth: 200,  
+      	closeOnClick: true 
+    	}
+    	)
 	)
 
 	
